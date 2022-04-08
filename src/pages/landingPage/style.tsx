@@ -20,6 +20,7 @@ export const Header = styled.header`
   padding: 0px 8.3%;
   min-height: calc(100vh - 168px);
   display: flex;
+  justify-content: center;
   position: relative;
   /* flex-wrap: wrap; */
 `;
@@ -65,6 +66,7 @@ export const HeaderSubTitle = styled.p`
   font-weight: 400;
   font-size: ${pxToRem(16)};
   line-height: ${pxToRem(22)};
+  padding-right: 15px;
   letter-spacing: 0.1px;
   color: ${colors.secondary.secondaryTint30};
 `;
@@ -75,15 +77,15 @@ export const HeaderButtonContainer = styled.div`
 
 export const HeaderImageContainer = styled.div`
   position: relative;
+  align-self: flex-end;
   @media (max-width: 990px) {
     display: none;
   }
 `;
 export const HeaderImage = styled.img`
-  width: auto;
-  max-height: 672.3px;
-  min-width: 200px;
-  height: 100%;
+  min-width: 441.36px;
+  width: 100%;
+  height: auto;
 `;
 const animateLinear = keyframes`
   0% {
@@ -96,8 +98,56 @@ const animateLinear = keyframes`
 export const CustomReviewCard = styled(ReviewCard)<{ left?: boolean }>`
   position: absolute;
   top: ${({ left }) => (left ? '462.3px' : '341px')};
-  left: ${({ left }) => (left ? '-64.15px' : 'unset')};
+  left: ${({ left }) => (left ? '-44.15px' : 'unset')};
   right: ${({ left }) => (left ? 'unset' : '-72.7px')};
   z-index: 1;
   animation: ${animateLinear} ease infinite 2s alternate;
+`;
+
+export const Section = styled.section`
+  scroll-snap-type: y mandatory;
+`;
+export const GoalsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 160px 8.3%;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 1s ease;
+  :active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+export const GoalTitle = styled.h2`
+  font-weight: 500;
+  margin: 0px 105.5px;
+  font-size: ${pxToRem(40)};
+  line-height: ${pxToRem(58)};
+  letter-spacing: ${pxToRem(-0.5)};
+  color: #000b33;
+  text-align: center;
+  @media (max-width: 730px) {
+    margin: 0;
+  }
+  @media (max-width: 500px) {
+    font-size: ${pxToRem(30)};
+    line-height: ${pxToRem(30 * 1.5)};
+  }
+`;
+export const GoalSubTitle = styled.p`
+  font-weight: 400;
+  margin: 16px 105.5px 40px 105.5px;
+  font-size: ${pxToRem(18)};
+  line-height: ${pxToRem(26)};
+  text-align: center;
+  color: #000b33;
+  @media (max-width: 730px) {
+    margin: 16px 0px 40px 0px;
+  }
+`;
+export const CardContainer = styled.div`
+  display: flex;
+  margin: 0 16px;
+  flex-wrap: wrap;
 `;
