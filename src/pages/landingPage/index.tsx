@@ -17,7 +17,6 @@ import headerImage from '../../assets/header_image.svg';
 import app_store from '../../assets/app_store.svg';
 import play_store from '../../assets/play_store.svg';
 import { StoreButton } from '../../components/button';
-import { ReviewCard } from '../../components/card';
 
 export const LandingPage = () => {
   return (
