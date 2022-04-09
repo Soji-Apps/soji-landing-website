@@ -8,6 +8,7 @@ import banner from '../../assets/banner.svg';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: ${colors.primary.primaryTint50};
 `;
 
 export const Logo = styled.img`
@@ -206,8 +207,8 @@ export const AboutContent = styled(GoalSubTitle)`
 export const Column = styled.div<{ left?: boolean }>`
   display: flex;
   flex-direction: column;
-  margin-right: ${({ left }) => (left ? 'unset' : '32px')};
-  margin-left: ${({ left }) => (left ? '32px' : 'unset')};
+  margin-right: ${({ left }) => (left ? 'unset' : '40px')};
+  margin-left: ${({ left }) => (left ? '40px' : 'unset')};
   @media (max-width: 768px) {
     margin: 0;
     align-self: center;
@@ -294,7 +295,7 @@ export const CustomSideCard2 = styled(CustomSideCard)`
   }
 `;
 export const AgentSideContainer = styled(UserSideContainer)`
-  background-color: unset;
+  background-color: ${colors.primary.main};
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: end;
@@ -305,10 +306,50 @@ export const AgentSideTitle = styled(AboutTitle)``;
 
 export const AgentSideContent = styled(AboutContent)``;
 
+export const FeaturesContainer = styled(AboutContainer)`
+  min-height: 684.32px;
+  background-color: ${colors.primary.primaryTint50};
+  margin-bottom: 119.68px;
+  margin-top: 160px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    margin-top: 80px;
+  }
+`;
+export const FeatureImage = styled(AboutImage)`
+  max-height: 684.32px;
+  max-width: 681.65x;
+  @media (max-width: 990px) {
+    max-height: 500px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    max-height: unset;
+  }
+`;
+export const FeatureTitle = styled(HeaderTitle)`
+  font-size: ${pxToRem(48)};
+  margin-top: unset;
+  line-height: ${pxToRem(57)};
+  max-width: 440px;
+  text-align: left;
+  @media (max-width: 990px) {
+    margin-top: 20px;
+  }
+  @media (max-width: 500px) {
+    font-size: ${pxToRem(30)};
+    line-height: ${pxToRem(30 * 1.5)};
+  }
+`;
+export const FeatureSubTitle = styled(HeaderSubTitle)`
+  max-width: 638px;
+  text-align: left;
+  max-width: 440px;
+  margin-bottom: 58px;
+`;
 export const Banner = styled.div`
   min-height: 400px;
   background-image: url(${banner});
-  margin-top: 119.68px;
   display: flex;
   flex-direction: column;
   align-items: center;

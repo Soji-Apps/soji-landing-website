@@ -17,6 +17,10 @@ import {
   CustomReviewCard,
   CustomSideCard,
   CustomSideCard2,
+  FeatureImage,
+  FeaturesContainer,
+  FeatureSubTitle,
+  FeatureTitle,
   GoalsContainer,
   GoalSubTitle,
   GoalTitle,
@@ -42,9 +46,11 @@ import play_store from '../../assets/play_store.svg';
 import splash from '../../assets/splash.svg';
 import splash2 from '../../assets/splash2.svg';
 import splash3 from '../../assets/splash3.svg';
+import splash4 from '../../assets/splash4.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef } from 'react';
+import { Feature } from '../../components';
 
 export const LandingPage = () => {
   const documentRef = useRef<HTMLDivElement>(null);
@@ -193,6 +199,28 @@ export const LandingPage = () => {
             <UserSideImage alt="" src={splash3} />
           </UserSideImageContiner>
         </AgentSideContainer>
+      </Section>
+      <Section>
+        <FeaturesContainer className="reveal">
+          <FeatureImage alt="" src={splash4} />
+          <Column left>
+            <FeatureTitle as={'h2'}>
+              Easy to manage all services requests
+            </FeatureTitle>
+            <FeatureSubTitle>
+              An enim nullam tempor gravida donec enim luctus risusd diam eget
+              risus varius blandit sit amet.
+            </FeatureSubTitle>
+            <Feature
+              title="Feature one"
+              body="We believe that designing products and services in close  is the only way to have a real impact on their business."
+            />
+            <Feature
+              title="Feature two"
+              body="We believe that designing products and services in close  is the only way to have a real impact on their business."
+            />
+          </Column>
+        </FeaturesContainer>
       </Section>
       <Banner>
         <BannerTitle>SOJI IS CONVINENET, EASY & SECURE </BannerTitle>
