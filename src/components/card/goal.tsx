@@ -24,6 +24,7 @@ const Card = styled.div`
   box-sizing: border-box;
   border-radius: 16px;
   display: flex;
+  height: 172px;
   padding: 12px;
   :nth-child(2) {
     margin: 0 40px;
@@ -31,7 +32,10 @@ const Card = styled.div`
   width: calc(33.33% - 40px);
   @media (max-width: 1000px) {
     width: calc(45% - 16px);
-    margin: 0px;
+    margin: 0px 0px 40px;
+    :nth-child(2) {
+      margin: 0 0 0 40px;
+    }
   }
   @media (max-width: 730px) {
     width: 100%;

@@ -111,13 +111,6 @@ export const GoalsContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 160px 8.3%;
-  transform: translateY(100px);
-  opacity: 0;
-  transition: all 1s ease;
-  :active {
-    transform: translateY(0px);
-    opacity: 1;
-  }
 `;
 export const GoalTitle = styled.h2`
   font-weight: 500;
@@ -129,6 +122,7 @@ export const GoalTitle = styled.h2`
   text-align: center;
   @media (max-width: 730px) {
     margin: 0;
+    text-align: left;
   }
   @media (max-width: 500px) {
     font-size: ${pxToRem(30)};
@@ -144,10 +138,61 @@ export const GoalSubTitle = styled.p`
   color: #000b33;
   @media (max-width: 730px) {
     margin: 16px 0px 40px 0px;
+    text-align: left;
   }
 `;
 export const CardContainer = styled.div`
   display: flex;
   margin: 0 16px;
   flex-wrap: wrap;
+  @media (max-width: 1000px) {
+    justify-content: space-between;
+  }
+`;
+
+export const AboutContainer = styled.div`
+  display: flex;
+  margin: 0px 8.3% 160px 8.3%;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+export const AboutTitle = styled.h2`
+  font-weight: 700;
+  font-size: ${pxToRem(40)};
+  line-height: ${pxToRem(56)};
+  letter-spacing: ${pxToRem(0.2)};
+  color: ${colors.newBlack};
+  text-align: left;
+  @media (max-width: 500px) {
+    font-size: ${pxToRem(30)};
+    line-height: ${pxToRem(30 * 1.5)};
+  }
+`;
+export const AboutContent = styled(GoalSubTitle)`
+  margin: 16px 0 0;
+  text-align: left;
+`;
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AboutImage = styled.img`
+  width: 100%;
+  height: auto;
+  max-height: 587px;
+  @media (max-width: 990px) {
+    max-height: 500px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
+`;
+
+export const UserSideContainer = styled.div`
+  background-color: #6542c0;
+  min-height: 600px;
 `;

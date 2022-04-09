@@ -1,7 +1,12 @@
 import {
+  AboutContainer,
+  AboutContent,
+  AboutImage,
+  AboutTitle,
   BackgroudCirlce,
   BackgroudCirlce2,
   CardContainer,
+  Column,
   Container,
   CustomReviewCard,
   GoalsContainer,
@@ -15,12 +20,14 @@ import {
   HeaderSubTitle,
   HeaderTitle,
   Logo,
-  Section
+  Section,
+  UserSideContainer
 } from './style';
 import logo from '../../assets/soji_logo.svg';
 import headerImage from '../../assets/header_image.svg';
 import app_store from '../../assets/app_store.svg';
 import play_store from '../../assets/play_store.svg';
+import splash from '../../assets/splash.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef } from 'react';
@@ -116,6 +123,25 @@ export const LandingPage = () => {
             />
           </CardContainer>
         </GoalsContainer>
+      </Section>
+      <Section>
+        <AboutContainer className="reveal">
+          <Column>
+            <AboutTitle>Enjoy professional services with SOJI</AboutTitle>
+            <AboutContent>
+              You can also check your account balance through the net banking
+              facility. To use this facility need to login to the official
+              website of the concerned bank from your phone. You can also check
+              your account balance through the net banking facility. To use this
+              facility need to login to the official website of the concerned
+              bank from your phone.
+            </AboutContent>
+          </Column>
+          <AboutImage alt="" src={splash} />
+        </AboutContainer>
+      </Section>
+      <Section>
+        <UserSideContainer></UserSideContainer>
       </Section>
     </Container>
   );
