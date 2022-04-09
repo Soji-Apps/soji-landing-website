@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { ReviewCard } from '../../components/card';
+import { SideCard } from '../../components/card/side';
 import { colors } from '../../utils/colors';
 import { pxToRem } from '../../utils/pxToRem';
 export const Container = styled.div`
@@ -23,7 +24,6 @@ export const Header = styled.header`
   justify-content: center;
   position: relative;
   @media (max-width: 990px) {
-    /* display: none; */
     flex-direction: column;
   }
 `;
@@ -63,8 +63,8 @@ export const HeaderTitle = styled.h1`
     margin-top: 20px;
   }
   @media (max-width: 500px) {
-    font-size: ${pxToRem(40)};
-    line-height: ${pxToRem(40 * 1.5)};
+    font-size: ${pxToRem(30)};
+    line-height: ${pxToRem(30 * 1.5)};
   }
 `;
 export const HeaderSubTitle = styled.p`
@@ -143,6 +143,10 @@ export const GoalTitle = styled.h2`
     font-size: ${pxToRem(30)};
     line-height: ${pxToRem(30 * 1.5)};
   }
+  @media (max-width: 500px) {
+    font-size: ${pxToRem(20)};
+    line-height: ${pxToRem(20 * 1.5)};
+  }
 `;
 export const GoalSubTitle = styled.p`
   font-weight: 400;
@@ -154,6 +158,10 @@ export const GoalSubTitle = styled.p`
   @media (max-width: 730px) {
     margin: 16px 0px 40px 0px;
     text-align: left;
+  }
+  @media (max-width: 500px) {
+    font-size: ${pxToRem(16)};
+    line-height: ${pxToRem(16 * 1.5)};
   }
 `;
 export const CardContainer = styled.div`
@@ -184,8 +192,8 @@ export const AboutTitle = styled.h2`
   text-align: left;
   max-width: 486px;
   @media (max-width: 500px) {
-    font-size: ${pxToRem(30)};
-    line-height: ${pxToRem(30 * 1.5)};
+    font-size: ${pxToRem(20)};
+    line-height: ${pxToRem(20 * 1.5)};
   }
 `;
 export const AboutContent = styled(GoalSubTitle)`
@@ -226,6 +234,7 @@ export const UserSideContainer = styled(AboutContainer)`
   padding: 0 8.06%;
   @media (max-width: 768px) {
     flex-direction: column-reverse;
+    justify-content: end;
   }
 `;
 
@@ -260,3 +269,35 @@ export const UserSideTitle = styled(AboutTitle)`
 export const UserSideContent = styled(AboutContent)`
   color: ${colors.primary.primaryTint50};
 `;
+
+export const CustomSideCard = styled(SideCard)`
+  background: #00bb98;
+  position: absolute;
+  top: 10%;
+  @media (max-width: 500px) {
+    left: -15px;
+  }
+  animation: ${animateLinear} ease infinite 2s alternate;
+`;
+export const CustomSideCard2 = styled(CustomSideCard)`
+  background: #fda800;
+  right: 0;
+  top: 34.58%;
+  left: unset;
+  @media (max-width: 900px) {
+    right: -15px;
+  }
+  @media (max-width: 500px) {
+    top: 60%;
+  }
+`;
+export const AgentSideContainer = styled(UserSideContainer)`
+  background-color: unset;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: end;
+  }
+`;
+export const AgentSideTitle = styled(AboutTitle)``;
+
+export const AgentSideContent = styled(AboutContent)``;

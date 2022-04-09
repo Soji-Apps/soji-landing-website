@@ -8,6 +8,9 @@ export const BaseButton = styled.button`
   border: none;
   padding: 0;
   padding-right: 24px;
+  :nth-child(2) {
+    padding-right: 0;
+  }
 `;
 
 interface IStoreButton extends ComponentPropsWithoutRef<'button'> {

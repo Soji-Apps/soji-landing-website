@@ -3,12 +3,17 @@ import {
   AboutContent,
   AboutImage,
   AboutTitle,
+  AgentSideContainer,
+  AgentSideContent,
+  AgentSideTitle,
   BackgroudCirlce,
   BackgroudCirlce2,
   CardContainer,
   Column,
   Container,
   CustomReviewCard,
+  CustomSideCard,
+  CustomSideCard2,
   GoalsContainer,
   GoalSubTitle,
   GoalTitle,
@@ -33,6 +38,7 @@ import app_store from '../../assets/app_store.svg';
 import play_store from '../../assets/play_store.svg';
 import splash from '../../assets/splash.svg';
 import splash2 from '../../assets/splash2.svg';
+import splash3 from '../../assets/splash3.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef } from 'react';
@@ -148,6 +154,8 @@ export const LandingPage = () => {
       <Section>
         <UserSideContainer className="reveal">
           <UserSideImageContiner>
+            <CustomSideCard title="9,823" body="Dummy title on here" />
+            <CustomSideCard2 title="9,823" body="Dummy title on here" />
             <UserSideImage alt="" src={splash2} />
           </UserSideImageContiner>
           <Column left>
@@ -162,6 +170,26 @@ export const LandingPage = () => {
             </UserSideContent>
           </Column>
         </UserSideContainer>
+      </Section>
+      <Section>
+        <AgentSideContainer className="reveal">
+          <Column>
+            <AgentSideTitle>Agent side</AgentSideTitle>
+            <AgentSideContent>
+              You can also check your account balance through the net banking
+              facility. To use this facility need to login to the official
+              website of the concerned bank from your phone. You can also check
+              your account balance through the net banking facility. To use this
+              facility need to login to the official website of the concerned
+              bank from your phone.
+            </AgentSideContent>
+          </Column>
+          <UserSideImageContiner>
+            <CustomSideCard title="9,823" body="Dummy title on here" />
+            <CustomSideCard2 title="9,823" body="Dummy title on here" />
+            <UserSideImage alt="" src={splash3} />
+          </UserSideImageContiner>
+        </AgentSideContainer>
       </Section>
     </Container>
   );
