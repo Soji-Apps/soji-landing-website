@@ -22,7 +22,10 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
   position: relative;
-  /* flex-wrap: wrap; */
+  @media (max-width: 990px) {
+    /* display: none; */
+    flex-direction: column;
+  }
 `;
 
 export const HeaderContentContainer = styled.div`
@@ -37,7 +40,7 @@ export const BackgroudCirlce = styled.div`
   opacity: 0.4;
   height: 269px;
   width: 269px;
-  margin-top: calc(73px - 24px);
+  margin-top: 30px;
   position: absolute;
   border-radius: 135px;
   filter: blur(100px);
@@ -56,6 +59,9 @@ export const HeaderTitle = styled.h1`
   align-items: center;
   letter-spacing: ${pxToRem(-0.5)};
   color: ${colors.newBlack};
+  @media (max-width: 990px) {
+    margin-top: 20px;
+  }
   @media (max-width: 500px) {
     font-size: ${pxToRem(40)};
     line-height: ${pxToRem(40 * 1.5)};
@@ -78,14 +84,19 @@ export const HeaderButtonContainer = styled.div`
 export const HeaderImageContainer = styled.div`
   position: relative;
   align-self: flex-end;
+  min-width: 441.36px;
+  min-height: 400px;
   @media (max-width: 990px) {
-    display: none;
+    align-self: center;
+    margin-top: 40px;
+    min-width: unset;
   }
 `;
 export const HeaderImage = styled.img`
-  min-width: 441.36px;
   width: 100%;
   height: auto;
+  @media (max-width: 990px) {
+  }
 `;
 const animateLinear = keyframes`
   0% {
@@ -97,11 +108,15 @@ const animateLinear = keyframes`
 `;
 export const CustomReviewCard = styled(ReviewCard)<{ left?: boolean }>`
   position: absolute;
-  top: ${({ left }) => (left ? '462.3px' : '341px')};
+  top: ${({ left }) => (left ? '68.76%' : '50.82%')};
   left: ${({ left }) => (left ? '-44.15px' : 'unset')};
   right: ${({ left }) => (left ? 'unset' : '-72.7px')};
   z-index: 1;
   animation: ${animateLinear} ease infinite 2s alternate;
+  @media (max-width: 990px) {
+    right: ${({ left }) => (left ? 'unset' : '-5%')};
+    left: ${({ left }) => (left ? '-5%' : 'unset')};
+  }
 `;
 
 export const Section = styled.section`
@@ -147,6 +162,7 @@ export const CardContainer = styled.div`
   flex-wrap: wrap;
   @media (max-width: 1000px) {
     justify-content: space-between;
+    margin: 0;
   }
 `;
 
