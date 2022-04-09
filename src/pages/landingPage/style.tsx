@@ -296,6 +296,7 @@ export const AgentSideContainer = styled(UserSideContainer)`
   @media (max-width: 768px) {
     flex-direction: column;
     justify-content: end;
+    margin-top: 40px;
   }
 `;
 export const AgentSideTitle = styled(AboutTitle)``;
