@@ -8,6 +8,9 @@ import {
   AgentSideTitle,
   BackgroudCirlce,
   BackgroudCirlce2,
+  Banner,
+  BannerSubTitle,
+  BannerTitle,
   CardContainer,
   Column,
   Container,
@@ -191,6 +194,18 @@ export const LandingPage = () => {
           </UserSideImageContiner>
         </AgentSideContainer>
       </Section>
+      <Banner>
+        <BannerTitle>SOJI IS CONVINENET, EASY & SECURE </BannerTitle>
+        <BannerSubTitle>
+          An enim nullam tempor sapien gravida donec enim ipsum porta justo
+          integer at integer congue magna at pretium purus pretium ligula
+          rutrum.
+        </BannerSubTitle>
+        <HeaderButtonContainer>
+          <StoreButton src={app_store} />
+          <StoreButton src={play_store} />
+        </HeaderButtonContainer>
+      </Banner>
     </Container>
   );
 };

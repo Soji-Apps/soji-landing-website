@@ -7,7 +7,7 @@ export const BaseButton = styled.button`
   outline: none;
   border: none;
   padding: 0;
-  padding-right: 24px;
+  margin-right: 24px;
   :nth-child(2) {
     padding-right: 0;
   }

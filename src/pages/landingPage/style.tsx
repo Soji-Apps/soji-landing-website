@@ -3,6 +3,8 @@ import { ReviewCard } from '../../components/card';
 import { SideCard } from '../../components/card/side';
 import { colors } from '../../utils/colors';
 import { pxToRem } from '../../utils/pxToRem';
+import banner from '../../assets/banner.svg';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -302,3 +304,31 @@ export const AgentSideContainer = styled(UserSideContainer)`
 export const AgentSideTitle = styled(AboutTitle)``;
 
 export const AgentSideContent = styled(AboutContent)``;
+
+export const Banner = styled.div`
+  min-height: 400px;
+  background-image: url(${banner});
+  margin-top: 119.68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+`;
+
+export const BannerTitle = styled(HeaderTitle)`
+  font-size: ${pxToRem(48)};
+  margin-top: unset;
+  line-height: ${pxToRem(57)};
+  color: ${colors.primary.primaryTint50};
+  text-align: center;
+  @media (max-width: 500px) {
+    font-size: ${pxToRem(30)};
+    line-height: ${pxToRem(30 * 1.5)};
+  }
+`;
+export const BannerSubTitle = styled(HeaderSubTitle)`
+  color: ${colors.primary.primaryTint50};
+  max-width: 638px;
+  text-align: center;
+`;
