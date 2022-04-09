@@ -170,7 +170,7 @@ export const AboutContainer = styled.div`
   display: flex;
   margin: 0px 8.3% 160px 8.3%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -182,6 +182,7 @@ export const AboutTitle = styled.h2`
   letter-spacing: ${pxToRem(0.2)};
   color: ${colors.newBlack};
   text-align: left;
+  max-width: 486px;
   @media (max-width: 500px) {
     font-size: ${pxToRem(30)};
     line-height: ${pxToRem(30 * 1.5)};
@@ -190,25 +191,72 @@ export const AboutTitle = styled.h2`
 export const AboutContent = styled(GoalSubTitle)`
   margin: 16px 0 0;
   text-align: left;
+  max-width: 486px;
 `;
-export const Column = styled.div`
+export const Column = styled.div<{ left?: boolean }>`
   display: flex;
   flex-direction: column;
+  margin-right: ${({ left }) => (left ? 'unset' : '32px')};
+  margin-left: ${({ left }) => (left ? '32px' : 'unset')};
+  @media (max-width: 768px) {
+    margin: 0;
+    align-self: center;
+    margin-top: ${({ left }) => (!left ? 'unset' : '40px')};
+  }
 `;
 
 export const AboutImage = styled.img`
   width: 100%;
   height: auto;
   max-height: 587px;
+  max-width: 448.76px;
   @media (max-width: 990px) {
     max-height: 500px;
   }
   @media (max-width: 768px) {
     margin-top: 40px;
+    max-height: unset;
   }
 `;
 
-export const UserSideContainer = styled.div`
+export const UserSideContainer = styled(AboutContainer)`
+  margin: 0;
   background-color: #6542c0;
   min-height: 600px;
+  padding: 0 8.06%;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+`;
+
+export const UserSideImageContiner = styled.div`
+  position: relative;
+  align-self: flex-end;
+  display: flex;
+  @media (max-width: 768px) {
+    align-self: center;
+  }
+`;
+export const UserSideImage = styled.img`
+  width: auto;
+  height: 100%;
+  max-height: 396px;
+  align-self: flex-end;
+  @media (max-width: 1024px) {
+    max-height: 350px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    max-height: unset;
+    width: 100%;
+    height: auto;
+  }
+`;
+
+export const UserSideTitle = styled(AboutTitle)`
+  color: ${colors.primary.primaryTint50};
+`;
+
+export const UserSideContent = styled(AboutContent)`
+  color: ${colors.primary.primaryTint50};
 `;

@@ -21,13 +21,18 @@ import {
   HeaderTitle,
   Logo,
   Section,
-  UserSideContainer
+  UserSideContainer,
+  UserSideContent,
+  UserSideImage,
+  UserSideImageContiner,
+  UserSideTitle
 } from './style';
 import logo from '../../assets/soji_logo.svg';
 import headerImage from '../../assets/header_image.svg';
 import app_store from '../../assets/app_store.svg';
 import play_store from '../../assets/play_store.svg';
 import splash from '../../assets/splash.svg';
+import splash2 from '../../assets/splash2.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef } from 'react';
@@ -141,7 +146,22 @@ export const LandingPage = () => {
         </AboutContainer>
       </Section>
       <Section>
-        <UserSideContainer></UserSideContainer>
+        <UserSideContainer className="reveal">
+          <UserSideImageContiner>
+            <UserSideImage alt="" src={splash2} />
+          </UserSideImageContiner>
+          <Column left>
+            <UserSideTitle>User side</UserSideTitle>
+            <UserSideContent>
+              You can also check your account balance through the net banking
+              facility. To use this facility need to login to the official
+              website of the concerned bank from your phone. You can also check
+              your account balance through the net banking facility. To use this
+              facility need to login to the official website of the concerned
+              bank from your phone.
+            </UserSideContent>
+          </Column>
+        </UserSideContainer>
       </Section>
     </Container>
   );
