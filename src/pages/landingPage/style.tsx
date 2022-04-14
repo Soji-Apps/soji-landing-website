@@ -379,8 +379,8 @@ export const BottomContainer = styled.div`
   background: #fafafa;
 `;
 export const QuestionContainer = styled.div`
-  width: 75em;
-  padding: 0em 2em;
+  width: 1200px;
+  padding: 0px 32px;
   margin: auto;
   @media (max-width: 1024px) {
     width: 80%;
@@ -388,53 +388,39 @@ export const QuestionContainer = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     margin: unset;
-    padding: 0em;
-    margin-top: -3em;
+    padding: 0px;
+    margin-top: -48px;
   }
 `;
 export const QuestionTitle = styled.p`
-  font-family: 'DM Sans';
   font-weight: 700;
-  font-size: 40px;
-  line-height: 140%;
-  margin: 3em 0em 1em 0em;
+  font-size: ${pxToRem(40)};
+  line-height: ${pxToRem(56)};
+  margin: 120px 0px 16px 0px;
   text-align: center;
-  letter-spacing: 0.2px;
-`;
-export const QuestionDiv = styled.div`
-  padding: 1.5em 2em;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
-  margin: 0em auto;
-  :last-child {
-    border-bottom: none;
-  }
-`;
-export const QuestionOpenIcon = styled.img`
-  width: 2em;
-  height: 2em;
+  letter-spacing: ${pxToRem(0 * 0.2)}; ;
 `;
 export const FooterFlex = styled.div`
   display: flex;
   justify-content: space-between;
   border-top: 1px solid whitesmoke;
-  margin-top: 3em;
-  padding: 0em 5em 0em 7em;
+  margin-top: 48px;
+  padding: 0px 80px 0px 112px;
   @media (max-width: 768px) {
     display: block;
-    margin-top: 1em;
-    padding: 0em;
+    margin-top: 16px;
+    padding: 0px;
   }
 `;
 export const LogoWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: left;
+  width: 400px;
 `;
 export const ContactWrap = styled.div`
   @media (max-width: 768px) {
-    margin: -4em 0em 0em 8.3%;
+    margin: -48px 0px 0px 8.3%;
   }
 `;
 export const Wrap = styled.div`
@@ -450,20 +436,20 @@ export const SocialIconWrap = styled.div`
   margin: 24px 8.3% 24px 0%;
 `;
 export const SocialIcon = styled.img`
-  padding-right: 0.3em;
-  width: 0.8em;
+  padding-right: 4.8px;
+  width: 12.8px;
   :nth-child(3) {
-    height: 0.7em;
-    width: 0.5em;
+    height: 11.2px;
+    width: 8px;
   }
 `;
 export const Contact = styled(FooterText)`
   font-weight: 700;
-  line-height: 24px;
+  line-height: ${pxToRem(24)};
   color: #fda800;
   margin: 64px 8.3% 24px 0%;
 `;
 export const CopyWriteText = styled(FooterText)`
   text-align: center;
-  padding: 5em 0em 2.1em 0em;
+  padding: 64px 0px 32px 0px;
 `;

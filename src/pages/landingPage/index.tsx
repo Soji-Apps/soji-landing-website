@@ -40,8 +40,6 @@ import {
   Logo,
   LogoWrap,
   QuestionContainer,
-  QuestionDiv,
-  QuestionOpenIcon,
   QuestionTitle,
   Section,
   SocialIcon,
@@ -66,14 +64,12 @@ import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef } from 'react';
 import { Feature } from '../../components';
 import { QuestionTab } from '../../components/question';
-import { QuestionHeader } from '../../components/question';
-import open_icon from '../../assets/open_icon.png';
-import facebook from '../../assets/facebook.png';
-import instagram from '../../assets/instagram.png';
-import twitter from '../../assets/twitter.png';
-import linkedin from '../../assets/linkedin.png';
-import email from '../../assets/email.png';
-import call from '../../assets/call.png';
+import facebook from '../../assets/facebook.svg';
+import instagram from '../../assets/instagram.svg';
+import twitter from '../../assets/twitter.svg';
+import linkedin from '../../assets/linkedin.svg';
+import email from '../../assets/email.svg';
+import call from '../../assets/call.svg';
 
 export const LandingPage = () => {
   const documentRef = useRef<HTMLDivElement>(null);
@@ -264,30 +260,18 @@ export const LandingPage = () => {
             header="Equally the beginning of the daily work?"
             text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
           />
-          <QuestionDiv>
-            <QuestionHeader>
-              Equally the beginning of the daily work?
-            </QuestionHeader>
-            <QuestionOpenIcon src={open_icon} />
-          </QuestionDiv>
-          <QuestionDiv>
-            <QuestionHeader>
-              Equally the beginning of the daily work?
-            </QuestionHeader>
-            <QuestionOpenIcon src={open_icon} />
-          </QuestionDiv>
-          <QuestionDiv>
-            <QuestionHeader>
-              Equally the beginning of the daily work?
-            </QuestionHeader>
-            <QuestionOpenIcon src={open_icon} />
-          </QuestionDiv>
-          <QuestionDiv>
-            <QuestionHeader>
-              Equally the beginning of the daily work?
-            </QuestionHeader>
-            <QuestionOpenIcon src={open_icon} />
-          </QuestionDiv>
+          <QuestionTab
+            header="Equally the beginning of the daily work?"
+            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
+          />
+          <QuestionTab
+            header="Equally the beginning of the daily work?"
+            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
+          />
+          <QuestionTab
+            header="Equally the beginning of the daily work?"
+            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
+          />
         </QuestionContainer>
         <FooterFlex>
           <LogoWrap>
@@ -307,11 +291,9 @@ export const LandingPage = () => {
             <FooterText>455 West Orchard Street</FooterText>
             <FooterText>Kings Mountains NC 280867</FooterText>
             <FooterText>
-              {' '}
               <SocialIcon src={call} /> +088 (246) 642-27-10
             </FooterText>
             <FooterText>
-              {' '}
               <SocialIcon src={email} /> example@gmail.com
             </FooterText>
             <HeaderButtonContainer>
