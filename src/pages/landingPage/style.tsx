@@ -4,6 +4,7 @@ import { SideCard } from '../../components/card/side';
 import { colors } from '../../utils/colors';
 import { pxToRem } from '../../utils/pxToRem';
 import banner from '../../assets/banner.svg';
+import { Text } from '../../components/question';
 
 export const Container = styled.div`
   display: flex;
@@ -372,4 +373,97 @@ export const BannerSubTitle = styled(HeaderSubTitle)`
   color: ${colors.primary.primaryTint50};
   max-width: 638px;
   text-align: center;
+`;
+export const BottomContainer = styled.div`
+  width: 100%;
+  background: #fafafa;
+`;
+export const QuestionContainer = styled.div`
+  width: 75em;
+  padding: 0em 2em;
+  margin: auto;
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: unset;
+    padding: 0em;
+    margin-top: -3em;
+  }
+`;
+export const QuestionTitle = styled.p`
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 140%;
+  margin: 3em 0em 1em 0em;
+  text-align: center;
+  letter-spacing: 0.2px;
+`;
+export const QuestionDiv = styled.div`
+  padding: 1.5em 2em;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid whitesmoke;
+  margin: 0em auto;
+  :last-child {
+    border-bottom: none;
+  }
+`;
+export const QuestionOpenIcon = styled.img`
+  width: 2em;
+  height: 2em;
+`;
+export const FooterFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid whitesmoke;
+  margin-top: 3em;
+  padding: 0em 5em 0em 7em;
+  @media (max-width: 768px) {
+    display: block;
+    margin-top: 1em;
+    padding: 0em;
+  }
+`;
+export const LogoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+`;
+export const ContactWrap = styled.div`
+  @media (max-width: 768px) {
+    margin: -4em 0em 0em 8.3%;
+  }
+`;
+export const Wrap = styled.div`
+  margin-left: 8.3%;
+`;
+export const FooterText = styled(Text)`
+  color: #000b33;
+`;
+export const SocialIconWrap = styled.div`
+  width: 10em;
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 8.3% 24px 0%;
+`;
+export const SocialIcon = styled.img`
+  padding-right: 0.3em;
+  width: 0.8em;
+  :nth-child(3) {
+    height: 0.7em;
+    width: 0.5em;
+  }
+`;
+export const Contact = styled(FooterText)`
+  font-weight: 700;
+  line-height: 24px;
+  color: #fda800;
+  margin: 64px 8.3% 24px 0%;
+`;
+export const CopyWriteText = styled(FooterText)`
+  text-align: center;
+  padding: 5em 0em 2.1em 0em;
 `;
