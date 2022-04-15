@@ -4,6 +4,7 @@ import { SideCard } from '../../components/card/side';
 import { colors } from '../../utils/colors';
 import { pxToRem } from '../../utils/pxToRem';
 import banner from '../../assets/banner.svg';
+import { Text } from '../../components/question';
 
 export const Container = styled.div`
   display: flex;
@@ -372,4 +373,83 @@ export const BannerSubTitle = styled(HeaderSubTitle)`
   color: ${colors.primary.primaryTint50};
   max-width: 638px;
   text-align: center;
+`;
+export const BottomContainer = styled.div`
+  width: 100%;
+  background: #fafafa;
+`;
+export const QuestionContainer = styled.div`
+  width: 1200px;
+  padding: 0px 32px;
+  margin: auto;
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: unset;
+    padding: 0px;
+    margin-top: -48px;
+  }
+`;
+export const QuestionTitle = styled.p`
+  font-weight: 700;
+  font-size: ${pxToRem(40)};
+  line-height: ${pxToRem(56)};
+  margin: 120px 0px 16px 0px;
+  text-align: center;
+  letter-spacing: ${pxToRem(0 * 0.2)}; ;
+`;
+export const FooterFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid whitesmoke;
+  margin-top: 48px;
+  padding: 0px 80px 0px 112px;
+  @media (max-width: 768px) {
+    display: block;
+    margin-top: 16px;
+    padding: 0px;
+  }
+`;
+export const LogoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 400px;
+`;
+export const ContactWrap = styled.div`
+  @media (max-width: 768px) {
+    margin: -48px 0px 0px 8.3%;
+  }
+`;
+export const Wrap = styled.div`
+  margin-left: 8.3%;
+`;
+export const FooterText = styled(Text)`
+  color: #000b33;
+`;
+export const SocialIconWrap = styled.div`
+  width: 10em;
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 8.3% 24px 0%;
+`;
+export const SocialIcon = styled.img`
+  padding-right: 4.8px;
+  width: 12.8px;
+  :nth-child(3) {
+    height: 11.2px;
+    width: 8px;
+  }
+`;
+export const Contact = styled(FooterText)`
+  font-weight: 700;
+  line-height: ${pxToRem(24)};
+  color: #fda800;
+  margin: 64px 8.3% 24px 0%;
+`;
+export const CopyWriteText = styled(FooterText)`
+  text-align: center;
+  padding: 64px 0px 32px 0px;
 `;

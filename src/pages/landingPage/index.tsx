@@ -11,9 +11,13 @@ import {
   Banner,
   BannerSubTitle,
   BannerTitle,
+  BottomContainer,
   CardContainer,
   Column,
+  Contact,
+  ContactWrap,
   Container,
+  CopyWriteText,
   CustomReviewCard,
   CustomSideCard,
   CustomSideCard2,
@@ -21,6 +25,8 @@ import {
   FeaturesContainer,
   FeatureSubTitle,
   FeatureTitle,
+  FooterFlex,
+  FooterText,
   GoalsContainer,
   GoalSubTitle,
   GoalTitle,
@@ -32,12 +38,18 @@ import {
   HeaderSubTitle,
   HeaderTitle,
   Logo,
+  LogoWrap,
+  QuestionContainer,
+  QuestionTitle,
   Section,
+  SocialIcon,
+  SocialIconWrap,
   UserSideContainer,
   UserSideContent,
   UserSideImage,
   UserSideImageContiner,
-  UserSideTitle
+  UserSideTitle,
+  Wrap
 } from './style';
 import logo from '../../assets/soji_logo.svg';
 import headerImage from '../../assets/header_image.svg';
@@ -51,6 +63,13 @@ import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef } from 'react';
 import { Feature } from '../../components';
+import { QuestionTab } from '../../components/question';
+import facebook from '../../assets/facebook.svg';
+import instagram from '../../assets/instagram.svg';
+import twitter from '../../assets/twitter.svg';
+import linkedin from '../../assets/linkedin.svg';
+import email from '../../assets/email.svg';
+import call from '../../assets/call.svg';
 
 export const LandingPage = () => {
   const documentRef = useRef<HTMLDivElement>(null);
@@ -234,6 +253,57 @@ export const LandingPage = () => {
           <StoreButton src={play_store} />
         </HeaderButtonContainer>
       </Banner>
+      <BottomContainer>
+        <QuestionContainer>
+          <QuestionTitle>Frequently Asked Questions</QuestionTitle>
+          <QuestionTab
+            header="Equally the beginning of the daily work?"
+            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
+          />
+          <QuestionTab
+            header="Equally the beginning of the daily work?"
+            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
+          />
+          <QuestionTab
+            header="Equally the beginning of the daily work?"
+            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
+          />
+          <QuestionTab
+            header="Equally the beginning of the daily work?"
+            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
+          />
+        </QuestionContainer>
+        <FooterFlex>
+          <LogoWrap>
+            <Logo alt="logo" src={logo} />
+            <Wrap>
+              <FooterText>Convenient and Professional service</FooterText>
+              <SocialIconWrap>
+                <SocialIcon src={instagram} />
+                <SocialIcon src={linkedin} />
+                <SocialIcon src={facebook} />
+                <SocialIcon src={twitter} />
+              </SocialIconWrap>
+            </Wrap>
+          </LogoWrap>
+          <ContactWrap>
+            <Contact>Contact info</Contact>
+            <FooterText>455 West Orchard Street</FooterText>
+            <FooterText>Kings Mountains NC 280867</FooterText>
+            <FooterText>
+              <SocialIcon src={call} /> +088 (246) 642-27-10
+            </FooterText>
+            <FooterText>
+              <SocialIcon src={email} /> example@gmail.com
+            </FooterText>
+            <HeaderButtonContainer>
+              <StoreButton src={app_store} />
+              <StoreButton src={play_store} />
+            </HeaderButtonContainer>
+          </ContactWrap>
+        </FooterFlex>
+        <CopyWriteText>© 2021 4thenergy All Rights Reserved.</CopyWriteText>
+      </BottomContainer>
     </Container>
   );
 };
