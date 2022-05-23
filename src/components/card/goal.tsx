@@ -26,6 +26,7 @@ const Card = styled.div`
   display: flex;
   height: 172px;
   padding: 12px;
+  box-shadow: 0px 2px 4px 4px rgba(129, 100, 203, 0.06);
   :nth-child(2) {
     margin: 0 40px;
   }

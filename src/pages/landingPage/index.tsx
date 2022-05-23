@@ -44,6 +44,7 @@ import {
   Section,
   SocialIcon,
   SocialIconWrap,
+  Span,
   UserSideContainer,
   UserSideContent,
   UserSideImage,
@@ -58,6 +59,7 @@ import play_store from '../../assets/play_store.svg';
 import splash from '../../assets/splash.svg';
 import splash2 from '../../assets/splash2.svg';
 import splash3 from '../../assets/splash3.svg';
+// import splash3 from '../../assets/nsplash3.svg';
 import splash4 from '../../assets/splash4.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
@@ -99,7 +101,9 @@ export const LandingPage = () => {
       <Header>
         <HeaderContentContainer>
           <BackgroudCirlce />
-          <HeaderTitle>SOJI IS CONVINENET, EASY & SECURE </HeaderTitle>
+          <HeaderTitle>
+            <Span>SOJI</Span> IS CONVINENET, EASY & SECURE{' '}
+          </HeaderTitle>
           <HeaderSubTitle>
             An enim nullam tempor sapien gravida donec enim ipsum porta justo
             integer at integer congue magna at pretium purus pretium ligula
@@ -118,9 +122,7 @@ export const LandingPage = () => {
               'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
             }
             name={'Ronald Richards'}
-            body={
-              'I commented on SOJI,I commented on SOJI, I commented on SOJI, '
-            }
+            body={'One of the best SOJI I have ever used'}
           />
           <CustomReviewCard
             imgSrc={
@@ -224,7 +226,7 @@ export const LandingPage = () => {
           <FeatureImage alt="" src={splash4} />
           <Column left>
             <FeatureTitle as={'h2'}>
-              Easy to manage all services requests
+              Easy and quick services requests
             </FeatureTitle>
             <FeatureSubTitle>
               An enim nullam tempor gravida donec enim luctus risusd diam eget
@@ -242,11 +244,11 @@ export const LandingPage = () => {
         </FeaturesContainer>
       </Section>
       <Banner>
-        <BannerTitle>SOJI IS CONVINENET, EASY & SECURE </BannerTitle>
+        <BannerTitle>SOJI is available for all devices </BannerTitle>
         <BannerSubTitle>
-          An enim nullam tempor sapien gravida donec enim ipsum porta justo
-          integer at integer congue magna at pretium purus pretium ligula
-          rutrum.
+          A private Limited is the most popular type of partnership Malta. The
+          limited liability is in fact, the only type of the company allowed by
+          Companies
         </BannerSubTitle>
         <HeaderButtonContainer>
           <StoreButton src={app_store} />
@@ -273,6 +275,7 @@ export const LandingPage = () => {
             text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
           />
         </QuestionContainer>
+
         <FooterFlex>
           <LogoWrap>
             <Logo alt="logo" src={logo} />
