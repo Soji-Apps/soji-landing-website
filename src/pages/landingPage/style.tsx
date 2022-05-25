@@ -71,6 +71,9 @@ export const HeaderTitle = styled.h1`
     line-height: ${pxToRem(30 * 1.5)};
   }
 `;
+export const Span = styled.span`
+  color: #fda800;
+`;
 export const HeaderSubTitle = styled.p`
   margin-top: 16px;
   font-weight: 400;
@@ -83,6 +86,11 @@ export const HeaderSubTitle = styled.p`
 export const HeaderButtonContainer = styled.div`
   display: flex;
   margin-top: 40px;
+  @media (max-width: 320px) {
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 export const HeaderImageContainer = styled.div`
@@ -233,7 +241,7 @@ export const AboutImage = styled.img`
 
 export const UserSideContainer = styled(AboutContainer)`
   margin: 0;
-  background-color: #6542c0;
+  background-color: ${colors.primary.main};
   min-height: 600px;
   padding: 0 8.06%;
   @media (max-width: 768px) {
@@ -266,13 +274,9 @@ export const UserSideImage = styled.img`
   }
 `;
 
-export const UserSideTitle = styled(AboutTitle)`
-  color: ${colors.primary.primaryTint50};
-`;
+export const UserSideTitle = styled(AboutTitle)``;
 
-export const UserSideContent = styled(AboutContent)`
-  color: ${colors.primary.primaryTint50};
-`;
+export const UserSideContent = styled(AboutContent)``;
 
 export const CustomSideCard = styled(SideCard)`
   background: #00bb98;
@@ -406,10 +410,14 @@ export const FooterFlex = styled.div`
   border-top: 1px solid whitesmoke;
   margin-top: 48px;
   padding: 0px 80px 0px 112px;
+  background-color: ${colors.primary.primaryTint50};
   @media (max-width: 768px) {
-    display: block;
+    /* display: block; */
     margin-top: 16px;
     padding: 0px;
+  }
+  @media (max-width: 425px) {
+    display: block;
   }
 `;
 export const LogoWrap = styled.div`
@@ -417,10 +425,17 @@ export const LogoWrap = styled.div`
   flex-direction: column;
   justify-content: left;
   width: 400px;
+  @media (max-width: 600px) {
+    width: auto;
+  }
 `;
 export const ContactWrap = styled.div`
   @media (max-width: 768px) {
-    margin: -48px 0px 0px 8.3%;
+    margin: 0px 0px 0px 8.3%;
+    /* width: 50%; */
+  }
+  @media (max-width: 425px) {
+    margin: -40px 0px 0px 8.3%;
   }
 `;
 export const Wrap = styled.div`
@@ -452,4 +467,5 @@ export const Contact = styled(FooterText)`
 export const CopyWriteText = styled(FooterText)`
   text-align: center;
   padding: 64px 0px 32px 0px;
+  background-color: ${colors.primary.primaryTint50};
 `;
