@@ -8,6 +8,7 @@ import {
   AgentSideTitle,
   BackgroudCirlce,
   BackgroudCirlce2,
+  BackgroudCirlce3,
   Banner,
   BannerSubTitle,
   BannerTitle,
@@ -15,15 +16,17 @@ import {
   CardContainer,
   Column,
   Contact,
+  ContactUs,
   ContactWrap,
   Container,
   CopyWriteText,
   CustomReviewCard,
   CustomSideCard,
   CustomSideCard2,
+  FeatureContent,
   FeatureImage,
+  FeatureImageContainer,
   FeaturesContainer,
-  FeatureSubTitle,
   FeatureTitle,
   FooterFlex,
   FooterText,
@@ -32,12 +35,13 @@ import {
   GoalTitle,
   Header,
   HeaderButtonContainer,
+  HeaderContent,
   HeaderContentContainer,
+  HeaderFlex,
   HeaderImage,
   HeaderImageContainer,
   HeaderSubTitle,
   HeaderTitle,
-  Logo,
   LogoWrap,
   QuestionContainer,
   QuestionTitle,
@@ -52,20 +56,23 @@ import {
   UserSideTitle,
   Wrap
 } from './style';
-import logo from '../../assets/soji_logo.svg';
-import headerImage from '../../assets/header_image.svg';
+import { ReactComponent as Logo } from '../../assets/soji_logo.svg';
+import headerImage from '../../assets/header_img.svg';
 import app_store from '../../assets/app_store.svg';
 import play_store from '../../assets/play_store.svg';
 import splash from '../../assets/splash.svg';
 import splash2 from '../../assets/splash2.svg';
 import splash3 from '../../assets/splash3.svg';
+import icon1 from '../../assets/card_icon1.svg';
+import icon2 from '../../assets/card_icon2.svg';
+import icon3 from '../../assets/card_icon3.svg';
+import icon4 from '../../assets/card_icon4.svg';
 // import splash3 from '../../assets/nsplash3.svg';
-import splash4 from '../../assets/splash4.svg';
+// import splash4 from '../../assets/splash4.svg';
+import splash4 from '../../assets/girl_img.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef } from 'react';
-import { Feature } from '../../components';
-import { QuestionTab } from '../../components/question';
 import facebook from '../../assets/facebook.svg';
 import instagram from '../../assets/instagram.svg';
 import twitter from '../../assets/twitter.svg';
@@ -97,88 +104,69 @@ export const LandingPage = () => {
   }, []);
   return (
     <Container ref={documentRef}>
-      <Logo alt="logo" src={logo} />
-      <Header>
-        <HeaderContentContainer>
-          <BackgroudCirlce />
-          <HeaderTitle>
-            <Span>SOJI</Span> IS CONVINENET, EASY & SECURE{' '}
-          </HeaderTitle>
-          <HeaderSubTitle>
-            An enim nullam tempor sapien gravida donec enim ipsum porta justo
-            integer at integer congue magna at pretium purus pretium ligula
-            rutrum.
-          </HeaderSubTitle>
-          <HeaderButtonContainer>
-            <StoreButton src={app_store} />
-            <StoreButton src={play_store} />
-          </HeaderButtonContainer>
-        </HeaderContentContainer>
-        <HeaderImageContainer>
-          <HeaderImage alt="" loading={'lazy'} src={headerImage} />
-          <CustomReviewCard
-            left
-            imgSrc={
-              'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
-            }
-            name={'Ronald Richards'}
-            body={'One of the best SOJI I have ever used'}
-          />
-          <CustomReviewCard
-            imgSrc={
-              'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
-            }
-            name={'Jenny Wilson'}
-            body={
-              'I commented on SOJI,I commented on SOJI, I commented on SOJI, '
-            }
-          />
-        </HeaderImageContainer>
-        <BackgroudCirlce2 />
-      </Header>
-      <Section>
-        <GoalsContainer className="reveal">
-          <GoalTitle>
-            Our goal is to make service delivery easy and seemless
-          </GoalTitle>
-          <GoalSubTitle>
-            An enim nullam tempor sapien gravida donec enim ipsum porta justo
-            integer at odio velna vitae auctor integer congue magna at pretium
-            purus pretium ligula rutrum luctus risus
-          </GoalSubTitle>
-          <CardContainer>
-            <GoalCard
-              text={
-                'SOlution solution solution Lörem ipsum pong spökgarn egotåst nilynde. Rärade tirad posamma. Nysm olig tilask utan revis teplare. Hemifölig beräk inte prena deciktigt. Nande Vans infrafölig asamma, sadade astrofän. Traner tygt nylig andrafiering. Eur'
-              }
-            />
-            <GoalCard
-              text={
-                'SOlution solution solution Lörem ipsum pong spökgarn egotåst nilynde. Rärade tirad posamma. Nysm olig tilask utan revis teplare. Hemifölig beräk inte prena deciktigt. Nande Vans infrafölig asamma, sadade astrofän. Traner tygt nylig andrafiering. Eur'
-              }
-            />
-            <GoalCard
-              text={
-                'SOlution solution solution Lörem ipsum pong spökgarn egotåst nilynde. Rärade tirad posamma. Nysm olig tilask utan revis teplare. Hemifölig beräk inte prena deciktigt. Nande Vans infrafölig asamma, sadade astrofän. Traner tygt nylig andrafiering. Eur'
-              }
-            />
-          </CardContainer>
-        </GoalsContainer>
-      </Section>
+      <HeaderContent>
+        <HeaderFlex>
+          <Logo />
+          <ContactUs>Contact us</ContactUs>
+        </HeaderFlex>
+        <Header>
+          <HeaderContentContainer>
+            <BackgroudCirlce />
+            <HeaderTitle>
+              <Span>SOJI</Span> IS CONVINENET, EASY & SECURE
+            </HeaderTitle>
+            <HeaderSubTitle>
+              An enim nullam tempor sapien gravida donec enim ipsum porta justo
+              integer at integer congue magna at pretium purus pretium ligula
+              rutrum.An enim nullam tempor sapien gravida donec enim ipsum porta
+              justo integer at integer congue magna at pretium purus pretium
+              ligula rutrum.
+            </HeaderSubTitle>
+            <HeaderButtonContainer>
+              <StoreButton src={app_store} />
+              <StoreButton src={play_store} />
+            </HeaderButtonContainer>
+          </HeaderContentContainer>
+          <HeaderImageContainer>
+            <HeaderImage alt="" loading={'lazy'} src={headerImage} />
+          </HeaderImageContainer>
+          <BackgroudCirlce2 />
+          <BackgroudCirlce3 />
+        </Header>
+      </HeaderContent>
       <Section>
         <AboutContainer className="reveal">
+          <CardContainer>
+            <GoalCard
+              imgSrc={icon1}
+              name="Increased revenue"
+              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+            />
+            <GoalCard
+              imgSrc={icon2}
+              name="Innovative solution"
+              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+            />
+            <GoalCard
+              imgSrc={icon3}
+              name="Vast Clientele"
+              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+            />
+            <GoalCard
+              imgSrc={icon4}
+              name="Secure transactions"
+              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+            />
+          </CardContainer>
           <Column>
-            <AboutTitle>Enjoy professional services with SOJI</AboutTitle>
+            <AboutTitle>Unique selling Proposition (USP)</AboutTitle>
             <AboutContent>
-              You can also check your account balance through the net banking
-              facility. To use this facility need to login to the official
-              website of the concerned bank from your phone. You can also check
-              your account balance through the net banking facility. To use this
-              facility need to login to the official website of the concerned
-              bank from your phone.
+              An enim nullam tempor sapien gravida donec enim ipsum porta justo
+              integer at odio velna vitae auctor integer An enim nullam tempor
+              sapien gravida donec enim ipsum porta justo integer at odio velna
+              vitae auctor integer
             </AboutContent>
           </Column>
-          <AboutImage alt="" src={splash} />
         </AboutContainer>
       </Section>
       <Section>
@@ -223,90 +211,76 @@ export const LandingPage = () => {
       </Section>
       <Section>
         <FeaturesContainer className="reveal">
-          <FeatureImage alt="" src={splash4} />
-          <Column left>
-            <FeatureTitle as={'h2'}>
-              Easy and quick services requests
-            </FeatureTitle>
-            <FeatureSubTitle>
-              An enim nullam tempor gravida donec enim luctus risusd diam eget
-              risus varius blandit sit amet.
-            </FeatureSubTitle>
-            <Feature
-              title="Feature one"
-              body="We believe that designing products and services in close  is the only way to have a real impact on their business."
-            />
-            <Feature
-              title="Feature two"
-              body="We believe that designing products and services in close  is the only way to have a real impact on their business."
-            />
+          <Column>
+            <FeatureTitle>Reinforcement statement</FeatureTitle>
+            <FeatureContent>
+              This section supports the hero section by reinforcing the headline
+              and assuring the visitor of top tier experience and service.
+            </FeatureContent>
           </Column>
+          <FeatureImageContainer>
+            <FeatureImage alt="" src={splash4} />
+            <CustomReviewCard
+              left
+              imgSrc={
+                'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
+              }
+              name={'Ronald Richards'}
+              body={'One of the best SOJI I have ever used'}
+            />
+            <CustomReviewCard
+              imgSrc={
+                'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
+              }
+              name={'Jenny Wilson'}
+              body={
+                'I commented on SOJI,I commented on SOJI, I commented on SOJI, '
+              }
+            />
+          </FeatureImageContainer>
         </FeaturesContainer>
       </Section>
       <Banner>
-        <BannerTitle>SOJI is available for all devices </BannerTitle>
-        <BannerSubTitle>
-          A private Limited is the most popular type of partnership Malta. The
-          limited liability is in fact, the only type of the company allowed by
-          Companies
-        </BannerSubTitle>
+        <BannerTitle>
+          Want us to email you about special offers & updates?
+        </BannerTitle>
         <HeaderButtonContainer>
           <StoreButton src={app_store} />
           <StoreButton src={play_store} />
         </HeaderButtonContainer>
       </Banner>
-      <BottomContainer>
-        <QuestionContainer>
-          <QuestionTitle>Frequently Asked Questions</QuestionTitle>
-          <QuestionTab
-            header="Equally the beginning of the daily work?"
-            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
-          />
-          <QuestionTab
-            header="Equally the beginning of the daily work?"
-            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
-          />
-          <QuestionTab
-            header="Equally the beginning of the daily work?"
-            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
-          />
-          <QuestionTab
-            header="Equally the beginning of the daily work?"
-            text="On the other hand, the strengthening and development of the structure largely determines the creation of substantial financial and administrative conditions. Equally, the beginning of the daily work on the formation of the position provides a wide range of (specialists) participation in the formation of participatory systems."
-          />
-        </QuestionContainer>
-
-        <FooterFlex>
-          <LogoWrap>
-            <Logo alt="logo" src={logo} />
-            <Wrap>
-              <FooterText>Convenient and Professional service</FooterText>
-              <SocialIconWrap>
-                <SocialIcon src={instagram} />
-                <SocialIcon src={linkedin} />
-                <SocialIcon src={facebook} />
-                <SocialIcon src={twitter} />
-              </SocialIconWrap>
-            </Wrap>
-          </LogoWrap>
-          <ContactWrap>
-            <Contact>Contact info</Contact>
-            <FooterText>455 West Orchard Street</FooterText>
-            <FooterText>Kings Mountains NC 280867</FooterText>
-            <FooterText>
-              <SocialIcon src={call} /> +088 (246) 642-27-10
-            </FooterText>
-            <FooterText>
-              <SocialIcon src={email} /> example@gmail.com
-            </FooterText>
-            <HeaderButtonContainer>
-              <StoreButton src={app_store} />
-              <StoreButton src={play_store} />
-            </HeaderButtonContainer>
-          </ContactWrap>
-        </FooterFlex>
-        <CopyWriteText>© 2021 4thenergy All Rights Reserved.</CopyWriteText>
-      </BottomContainer>
+      {/* <BottomContainer> */}
+      <FooterFlex>
+        <LogoWrap>
+          <Logo />
+          <Wrap>
+            <FooterText>Convenient and Professional service</FooterText>
+            <SocialIconWrap>
+              <SocialIcon src={instagram} />
+              <SocialIcon src={linkedin} />
+              <SocialIcon src={facebook} />
+              <SocialIcon src={twitter} />
+            </SocialIconWrap>
+          </Wrap>
+        </LogoWrap>
+        <ContactWrap>
+          <Contact>Contact info</Contact>
+          <FooterText>455 West Orchard Street</FooterText>
+          <FooterText>Kings Mountains NC 280867</FooterText>
+          <FooterText>
+            <SocialIcon src={call} /> +088 (246) 642-27-10
+          </FooterText>
+          <FooterText>
+            <SocialIcon src={email} /> example@gmail.com
+          </FooterText>
+          <HeaderButtonContainer>
+            <StoreButton src={app_store} />
+            <StoreButton src={play_store} />
+          </HeaderButtonContainer>
+        </ContactWrap>
+      </FooterFlex>
+      <CopyWriteText>© 2021 4thenergy All Rights Reserved.</CopyWriteText>
+      {/* </BottomContainer> */}
     </Container>
   );
 };

@@ -4,28 +4,51 @@ import { SideCard } from '../../components/card/side';
 import { colors } from '../../utils/colors';
 import { pxToRem } from '../../utils/pxToRem';
 import banner from '../../assets/banner.svg';
-import { Text } from '../../components/question';
+import bgImage from '../../assets/bg_img.svg';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${colors.primary.primaryTint50};
+  background: #e5e5e5;
 `;
 
 export const Logo = styled.img`
   max-height: 40px;
   width: auto;
   align-self: flex-start;
-  margin: 64px 8.3% 24px 8.3%;
+  margin: 64px 8.3% 24px 0%;
   object-fit: contain;
 `;
-
+export const HeaderContent = styled.div`
+  background: url(${bgImage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0px;
+`;
+export const HeaderFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 8.3%;
+  svg {
+    margin: 64px 8.3% 24px 0%;
+    fill: ${colors.primary.primaryTint50};
+  }
+`;
+export const ContactUs = styled.p`
+  font-weight: 500;
+  font-size: ${pxToRem(21)};
+  line-height: ${pxToRem(29)};
+  letter-spacing: ${pxToRem(0.15)};
+  color: ${colors.primary.main};
+`;
 export const Header = styled.header`
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
-  padding: 0px 8.3%;
+  /* padding: 0px 8.3%; */
   min-height: calc(100vh - 168px);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0px 8.3%;
   position: relative;
   @media (max-width: 990px) {
     flex-direction: column;
@@ -37,23 +60,33 @@ export const HeaderContentContainer = styled.div`
   flex-direction: column;
   margin-right: 30.66px;
   position: relative;
-  max-width: 639px;
+  max-width: 700px;
 `;
 export const BackgroudCirlce = styled.div`
   background: #fda800;
   opacity: 0.4;
   height: 269px;
   width: 269px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   position: absolute;
+  left: -8.3%;
   border-radius: 135px;
   filter: blur(100px);
 `;
 export const BackgroudCirlce2 = styled(BackgroudCirlce)`
+  background: #fda800;
+  align-self: flex-end;
+  margin-top: unset;
+  left: 30%;
+  bottom: -30%;
+`;
+export const BackgroudCirlce3 = styled(BackgroudCirlce)`
   background: #4a2f8c;
   align-self: flex-end;
   margin-top: unset;
-  right: 57px;
+  right: -8.3%;
+  left: unset;
+  bottom: -150px;
 `;
 export const HeaderTitle = styled.h1`
   font-weight: 700;
@@ -62,7 +95,7 @@ export const HeaderTitle = styled.h1`
   line-height: ${pxToRem(84)};
   align-items: center;
   letter-spacing: ${pxToRem(-0.5)};
-  color: ${colors.newBlack};
+  color: ${colors.primary.primaryTint50};
   @media (max-width: 990px) {
     margin-top: 20px;
   }
@@ -81,7 +114,7 @@ export const HeaderSubTitle = styled.p`
   line-height: ${pxToRem(22)};
   padding-right: 15px;
   letter-spacing: 0.1px;
-  color: ${colors.secondary.secondaryTint30};
+  color: ${colors.primary.primaryTint50};
 `;
 export const HeaderButtonContainer = styled.div`
   display: flex;
@@ -95,6 +128,7 @@ export const HeaderButtonContainer = styled.div`
 
 export const HeaderImageContainer = styled.div`
   position: relative;
+  margin-top: 50px;
   align-self: flex-end;
   min-width: 441.36px;
   min-height: 400px;
@@ -179,27 +213,34 @@ export const GoalSubTitle = styled.p`
 export const CardContainer = styled.div`
   display: flex;
   margin: 0 16px;
+  width: 50%;
+  column-gap: 30px;
+  row-gap: 20px;
   flex-wrap: wrap;
   @media (max-width: 1000px) {
     justify-content: space-between;
     margin: 0;
   }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const AboutContainer = styled.div`
   display: flex;
-  margin: 0px 8.3% 160px 8.3%;
+  margin: 150px 8.3% 160px 8.3%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   @media (max-width: 768px) {
     flex-direction: column;
+    row-gap: 30px;
   }
 `;
 export const AboutTitle = styled.h2`
   font-weight: 700;
-  font-size: ${pxToRem(40)};
-  line-height: ${pxToRem(56)};
-  letter-spacing: ${pxToRem(0.2)};
+  font-size: ${pxToRem(48)};
+  line-height: ${pxToRem(62)};
+  letter-spacing: ${pxToRem(-1.584)};
   color: ${colors.newBlack};
   text-align: left;
   max-width: 486px;
@@ -314,11 +355,23 @@ export const AgentSideContent = styled(AboutContent)``;
 export const FeaturesContainer = styled(AboutContainer)`
   min-height: 684.32px;
   background-color: ${colors.primary.primaryTint50};
-  margin-bottom: 119.68px;
-  margin-top: 160px;
+  margin: 160px 0px 119.68px 0px;
+  padding: 0px 8.3%;
   @media (max-width: 768px) {
     flex-direction: column-reverse;
     margin-top: 80px;
+  }
+`;
+export const FeatureImageContainer = styled.div`
+  position: relative;
+  margin-top: 50px;
+  align-self: flex-end;
+  min-width: 441.36px;
+  min-height: 400px;
+  @media (max-width: 990px) {
+    align-self: center;
+    margin-top: 40px;
+    min-width: unset;
   }
 `;
 export const FeatureImage = styled(AboutImage)`
@@ -332,21 +385,8 @@ export const FeatureImage = styled(AboutImage)`
     max-height: unset;
   }
 `;
-export const FeatureTitle = styled(HeaderTitle)`
-  font-size: ${pxToRem(48)};
-  margin-top: unset;
-  line-height: ${pxToRem(57)};
-  max-width: 440px;
-  text-align: left;
-  @media (max-width: 990px) {
-    margin-top: 20px;
-  }
-  @media (max-width: 500px) {
-    font-size: ${pxToRem(30)};
-    line-height: ${pxToRem(30 * 1.5)};
-  }
-`;
-export const FeatureSubTitle = styled(HeaderSubTitle)`
+export const FeatureTitle = styled(AboutTitle)``;
+export const FeatureContent = styled(AboutContent)`
   max-width: 638px;
   text-align: left;
   max-width: 440px;
@@ -359,10 +399,12 @@ export const Banner = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const BannerTitle = styled(HeaderTitle)`
+  width: 60%;
   font-size: ${pxToRem(48)};
   margin-top: unset;
   line-height: ${pxToRem(57)};
@@ -407,9 +449,7 @@ export const QuestionTitle = styled.p`
 export const FooterFlex = styled.div`
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid whitesmoke;
-  margin-top: 48px;
-  padding: 0px 80px 0px 112px;
+  padding: 0px 80px 0px 8.3%;
   background-color: ${colors.primary.primaryTint50};
   @media (max-width: 768px) {
     /* display: block; */
@@ -428,6 +468,10 @@ export const LogoWrap = styled.div`
   @media (max-width: 600px) {
     width: auto;
   }
+  svg {
+    margin: 64px 8.3% 24px 0%;
+    fill: #430297;
+  }
 `;
 export const ContactWrap = styled.div`
   @media (max-width: 768px) {
@@ -438,11 +482,12 @@ export const ContactWrap = styled.div`
     margin: -40px 0px 0px 8.3%;
   }
 `;
-export const Wrap = styled.div`
-  margin-left: 8.3%;
-`;
-export const FooterText = styled(Text)`
-  color: #000b33;
+export const Wrap = styled.div``;
+export const FooterText = styled.p`
+  font-weight: 500;
+  font-size: ${pxToRem(16)};
+  line-height: ${pxToRem(22)};
+  color: #4e4e75;
 `;
 export const SocialIconWrap = styled.div`
   width: 10em;
