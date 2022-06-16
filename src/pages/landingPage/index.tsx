@@ -1,7 +1,6 @@
 import {
   AboutContainer,
   AboutContent,
-  AboutImage,
   AboutTitle,
   AgentSideContainer,
   AgentSideContent,
@@ -10,9 +9,7 @@ import {
   BackgroudCirlce2,
   BackgroudCirlce3,
   Banner,
-  BannerSubTitle,
   BannerTitle,
-  BottomContainer,
   CardContainer,
   Column,
   Contact,
@@ -30,9 +27,6 @@ import {
   FeatureTitle,
   FooterFlex,
   FooterText,
-  GoalsContainer,
-  GoalSubTitle,
-  GoalTitle,
   Header,
   HeaderButtonContainer,
   HeaderContent,
@@ -43,8 +37,6 @@ import {
   HeaderSubTitle,
   HeaderTitle,
   LogoWrap,
-  QuestionContainer,
-  QuestionTitle,
   Section,
   SocialIcon,
   SocialIconWrap,
@@ -60,7 +52,6 @@ import { ReactComponent as Logo } from '../../assets/soji_logo.svg';
 import headerImage from '../../assets/header_img.svg';
 import app_store from '../../assets/app_store.svg';
 import play_store from '../../assets/play_store.svg';
-import splash from '../../assets/splash.svg';
 import splash2 from '../../assets/splash2.svg';
 import splash3 from '../../assets/splash3.svg';
 import icon1 from '../../assets/card_icon1.svg';
