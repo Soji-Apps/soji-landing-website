@@ -9,8 +9,7 @@ import bgImage from '../../assets/bg_img.svg';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${colors.primary.primaryTint50};
-  background: #e5e5e5;
+  background-color: ${colors.primary.main};
 `;
 
 export const Logo = styled.img`
@@ -212,8 +211,8 @@ export const GoalSubTitle = styled.p`
 `;
 export const CardContainer = styled.div`
   display: flex;
+  flex: 1;
   margin: 0 16px;
-  width: 50%;
   column-gap: 30px;
   row-gap: 20px;
   flex-wrap: wrap;

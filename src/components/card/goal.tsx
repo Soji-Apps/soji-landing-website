@@ -29,9 +29,11 @@ const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  width: calc(50% - 60px);
-  padding: 20px;
+  max-width: 282px;
+  max-height: 264px;
+  padding: 40px 20px;
   row-gap: 20px;
+  box-sizing: border-box;
 `;
 const Avatar = styled.img`
   background: #c4c4c4;
