@@ -2,15 +2,23 @@ import {
   AboutContainer,
   AboutContent,
   AboutTitle,
-  AgentSideContainer,
-  AgentSideContent,
-  AgentSideTitle,
   BackgroudCirlce,
   BackgroudCirlce2,
   BackgroudCirlce3,
   Banner,
+  BannerContainer,
   BannerTitle,
+  BenefitContainer,
+  BenefitItem,
+  BenefitNumber,
+  BenefitNumberWrapper,
+  BenefitPhrase,
+  BenefitRow,
+  BenefitTitle,
+  BenefitWraper,
   CardContainer,
+  CarouselContainer,
+  CarouselImage,
   Column,
   Contact,
   ContactUs,
@@ -18,15 +26,21 @@ import {
   Container,
   CopyWriteText,
   CustomReviewCard,
-  CustomSideCard,
-  CustomSideCard2,
+  Dot,
+  DotContainer,
+  EmailSubscriptionButton,
+  EmailSubscriptionContainer,
+  EmailSubscriptionInput,
   FeatureContent,
   FeatureImage,
   FeatureImageContainer,
   FeaturesContainer,
+  FeaturesWrapper,
   FeatureTitle,
+  FooterContainer,
   FooterFlex,
   FooterText,
+  GetStartedContainer,
   Header,
   HeaderButtonContainer,
   HeaderContent,
@@ -36,42 +50,48 @@ import {
   HeaderImageContainer,
   HeaderSubTitle,
   HeaderTitle,
+  LeftBenefitList,
   LogoWrap,
+  RightBenefitList,
   Section,
   SocialIcon,
   SocialIconWrap,
+  SojiOnPhone,
   Span,
-  UserSideContainer,
-  UserSideContent,
-  UserSideImage,
-  UserSideImageContiner,
-  UserSideTitle,
+  StyledDescription,
+  StyledHeader,
+  CarouselItem,
+  StyledHeading,
   Wrap
 } from './style';
 import { ReactComponent as Logo } from '../../assets/soji_logo.svg';
 import headerImage from '../../assets/header_img.svg';
 import app_store from '../../assets/app_store.svg';
 import play_store from '../../assets/play_store.svg';
-import splash2 from '../../assets/splash2.svg';
-import splash3 from '../../assets/splash3.svg';
 import icon1 from '../../assets/card_icon1.svg';
 import icon2 from '../../assets/card_icon2.svg';
 import icon3 from '../../assets/card_icon3.svg';
 import icon4 from '../../assets/card_icon4.svg';
-// import splash3 from '../../assets/nsplash3.svg';
-// import splash4 from '../../assets/splash4.svg';
-import splash4 from '../../assets/girl_img.svg';
+import featureImg from '../../assets/feature_image.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import facebook from '../../assets/facebook.svg';
 import instagram from '../../assets/instagram.svg';
+import usecaseImage from '../../assets/Device - iPhone X.svg';
+import carouselImage3 from '../../assets/carouselImage.svg';
+import carouselImage1 from '../../assets/carouselImage1.svg';
+import carouselImage2 from '../../assets/carouselImage2.svg';
+import carouselImage4 from '../../assets/carouselImage3.svg';
+import carouselImage5 from '../../assets/carouselImage4.svg';
 import twitter from '../../assets/twitter.svg';
 import linkedin from '../../assets/linkedin.svg';
 import email from '../../assets/email.svg';
 import call from '../../assets/call.svg';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const LandingPage = () => {
+  const [active, setActive] = useState(2);
   const documentRef = useRef<HTMLDivElement>(null);
   const onScroll = () => {
     let revealPoint = 100;
@@ -93,6 +113,14 @@ export const LandingPage = () => {
 
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  const items = [
+    carouselImage1,
+    carouselImage2,
+    carouselImage3,
+    carouselImage4,
+    carouselImage5
+  ];
+
   return (
     <Container ref={documentRef}>
       <HeaderContent>
@@ -161,115 +189,185 @@ export const LandingPage = () => {
         </AboutContainer>
       </Section>
       <Section>
-        <UserSideContainer className="reveal">
-          <UserSideImageContiner>
-            <CustomSideCard title="9,823" body="Dummy title on here" />
-            <CustomSideCard2 title="9,823" body="Dummy title on here" />
-            <UserSideImage alt="" src={splash2} />
-          </UserSideImageContiner>
-          <Column left>
-            <UserSideTitle>User side</UserSideTitle>
-            <UserSideContent>
-              You can also check your account balance through the net banking
-              facility. To use this facility need to login to the official
-              website of the concerned bank from your phone. You can also check
-              your account balance through the net banking facility. To use this
-              facility need to login to the official website of the concerned
-              bank from your phone.
-            </UserSideContent>
-          </Column>
-        </UserSideContainer>
+        <BenefitContainer>
+          <StyledHeader>
+            <StyledHeading>Benefits of SOJI</StyledHeading>
+            <StyledDescription>
+              This section talks about the key benefits of SOJI to the user, who
+              include the Agent and the Client
+            </StyledDescription>
+          </StyledHeader>
+          <BenefitWraper>
+            <BenefitRow>
+              <BenefitItem>
+                <LeftBenefitList>
+                  <BenefitNumberWrapper>
+                    <BenefitNumber>1</BenefitNumber>
+                  </BenefitNumberWrapper>
+                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitPhrase>
+                    A wonderful serenity has taken possession of my entire soul,
+                    like these sweet mornings of spring which{' '}
+                  </BenefitPhrase>
+                </LeftBenefitList>
+                <LeftBenefitList>
+                  <BenefitNumberWrapper>
+                    <BenefitNumber>2</BenefitNumber>
+                  </BenefitNumberWrapper>
+                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitPhrase>
+                    A wonderful serenity has taken possession of my entire soul,
+                    like these sweet mornings of spring which{' '}
+                  </BenefitPhrase>
+                </LeftBenefitList>
+              </BenefitItem>
+              <BenefitItem>
+                <SojiOnPhone src={usecaseImage} alt="" />
+              </BenefitItem>
+              <BenefitItem>
+                <RightBenefitList>
+                  <BenefitNumber>3</BenefitNumber>
+                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitPhrase>
+                    A wonderful serenity has taken possession of my entire soul,
+                    like these sweet mornings of spring which{' '}
+                  </BenefitPhrase>
+                </RightBenefitList>
+                <RightBenefitList>
+                  <BenefitNumber>4</BenefitNumber>
+                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitPhrase>
+                    A wonderful serenity has taken possession of my entire soul,
+                    like these sweet mornings of spring which{' '}
+                  </BenefitPhrase>
+                </RightBenefitList>
+              </BenefitItem>
+            </BenefitRow>
+          </BenefitWraper>
+        </BenefitContainer>
       </Section>
       <Section>
-        <AgentSideContainer className="reveal">
-          <Column>
-            <AgentSideTitle>Agent side</AgentSideTitle>
-            <AgentSideContent>
-              You can also check your account balance through the net banking
-              facility. To use this facility need to login to the official
-              website of the concerned bank from your phone. You can also check
-              your account balance through the net banking facility. To use this
-              facility need to login to the official website of the concerned
-              bank from your phone.
-            </AgentSideContent>
-          </Column>
-          <UserSideImageContiner>
-            <CustomSideCard title="9,823" body="Dummy title on here" />
-            <CustomSideCard2 title="9,823" body="Dummy title on here" />
-            <UserSideImage alt="" src={splash3} />
-          </UserSideImageContiner>
-        </AgentSideContainer>
+        <GetStartedContainer>
+          <StyledHeader>
+            <StyledHeading>Start your journey with SOJI!</StyledHeading>
+            <StyledDescription>
+              This section shows different screens shots from SOJI as an example
+              of “context of use”
+            </StyledDescription>
+          </StyledHeader>
+          <CarouselContainer>
+            <CarouselItem>
+              {items.map((images, index) => {
+                return (
+                  <CarouselImage
+                    onClick={(e: any) => {
+                      setActive(index);
+                      e.stopPropagation();
+                    }}
+                    src={images}
+                    alt=""
+                    active={active === index}
+                    key={index.toString()}
+                  />
+                );
+              })}
+            </CarouselItem>
+            <DotContainer>
+              {items.map((_, index) => (
+                <Dot
+                  onClick={(e: any) => {
+                    setActive(index);
+                    e.stopPropagation();
+                  }}
+                  active={active === index}
+                  key={index.toString()}
+                />
+              ))}
+            </DotContainer>
+          </CarouselContainer>
+        </GetStartedContainer>
       </Section>
       <Section>
-        <FeaturesContainer className="reveal">
-          <Column>
-            <FeatureTitle>Reinforcement statement</FeatureTitle>
-            <FeatureContent>
-              This section supports the hero section by reinforcing the headline
-              and assuring the visitor of top tier experience and service.
-            </FeatureContent>
-          </Column>
-          <FeatureImageContainer>
-            <FeatureImage alt="" src={splash4} />
-            <CustomReviewCard
-              left
-              imgSrc={
-                'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
-              }
-              name={'Ronald Richards'}
-              body={'One of the best SOJI I have ever used'}
-            />
-            <CustomReviewCard
-              imgSrc={
-                'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
-              }
-              name={'Jenny Wilson'}
-              body={
-                'I commented on SOJI,I commented on SOJI, I commented on SOJI, '
-              }
-            />
-          </FeatureImageContainer>
-        </FeaturesContainer>
+        <FeaturesWrapper>
+          <FeaturesContainer className="reveal">
+            <Column>
+              <FeatureTitle>Reinforcement statement</FeatureTitle>
+              <FeatureContent>
+                This section supports the hero section by reinforcing the
+                headline and assuring the visitor of top tier experience and
+                service.
+              </FeatureContent>
+            </Column>
+            <FeatureImageContainer>
+              <FeatureImage alt="" src={featureImg} />
+              <CustomReviewCard
+                left
+                imgSrc={
+                  'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
+                }
+                name={'Ronald Richards'}
+                body={'One of the best SOJI I have ever used'}
+              />
+              <CustomReviewCard
+                imgSrc={
+                  'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
+                }
+                name={'Jenny Wilson'}
+                body={
+                  'I commented on SOJI,I commented on SOJI, I commented on SOJI, '
+                }
+              />
+            </FeatureImageContainer>
+          </FeaturesContainer>
+        </FeaturesWrapper>
       </Section>
-      <Banner>
-        <BannerTitle>
-          Want us to email you about special offers & updates?
-        </BannerTitle>
-        <HeaderButtonContainer>
+      <BannerContainer>
+        <Banner>
+          <BannerTitle>
+            Want us to email you about special offers & updates?
+          </BannerTitle>
+          <EmailSubscriptionContainer>
+            <EmailSubscriptionInput placeholder="Enter your email address" />
+            <EmailSubscriptionButton>Subscribe</EmailSubscriptionButton>
+          </EmailSubscriptionContainer>
+          {/* <HeaderButtonContainer>
           <StoreButton src={app_store} />
           <StoreButton src={play_store} />
-        </HeaderButtonContainer>
-      </Banner>
+        </HeaderButtonContainer> */}
+        </Banner>
+      </BannerContainer>
       {/* <BottomContainer> */}
-      <FooterFlex>
-        <LogoWrap>
-          <Logo />
-          <Wrap>
-            <FooterText>Convenient and Professional service</FooterText>
-            <SocialIconWrap>
-              <SocialIcon src={instagram} />
-              <SocialIcon src={linkedin} />
-              <SocialIcon src={facebook} />
-              <SocialIcon src={twitter} />
-            </SocialIconWrap>
-          </Wrap>
-        </LogoWrap>
-        <ContactWrap>
-          <Contact>Contact info</Contact>
-          <FooterText>455 West Orchard Street</FooterText>
-          <FooterText>Kings Mountains NC 280867</FooterText>
-          <FooterText>
-            <SocialIcon src={call} /> +088 (246) 642-27-10
-          </FooterText>
-          <FooterText>
-            <SocialIcon src={email} /> example@gmail.com
-          </FooterText>
-          <HeaderButtonContainer>
-            <StoreButton src={app_store} />
-            <StoreButton src={play_store} />
-          </HeaderButtonContainer>
-        </ContactWrap>
-      </FooterFlex>
+      <FooterContainer>
+        <FooterFlex>
+          <LogoWrap>
+            <Logo />
+            <Wrap>
+              <FooterText>Convenient and Professional service</FooterText>
+              <SocialIconWrap>
+                <SocialIcon src={instagram} />
+                <SocialIcon src={linkedin} />
+                <SocialIcon src={facebook} />
+                <SocialIcon src={twitter} />
+              </SocialIconWrap>
+            </Wrap>
+          </LogoWrap>
+          <ContactWrap>
+            <Contact>Contact info</Contact>
+            <FooterText>455 West Orchard Street</FooterText>
+            <FooterText>Kings Mountains NC 280867</FooterText>
+            <FooterText>
+              <SocialIcon src={call} /> +088 (246) 642-27-10
+            </FooterText>
+            <FooterText>
+              <SocialIcon src={email} /> example@gmail.com
+            </FooterText>
+            <HeaderButtonContainer>
+              <StoreButton src={app_store} />
+              <StoreButton src={play_store} />
+            </HeaderButtonContainer>
+          </ContactWrap>
+        </FooterFlex>
+      </FooterContainer>
       <CopyWriteText>© 2021 4thenergy All Rights Reserved.</CopyWriteText>
       {/* </BottomContainer> */}
     </Container>

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: DM Sans;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

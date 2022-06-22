@@ -34,6 +34,10 @@ const Card = styled.div`
   padding: 40px 20px;
   row-gap: 20px;
   box-sizing: border-box;
+
+  @media (max-width: 712px) {
+    max-width: unset;
+  }
 `;
 const Avatar = styled.img`
   background: #c4c4c4;
