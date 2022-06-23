@@ -1,62 +1,68 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import goal_icon from '../../assets/goal_icon.svg';
-import { colors } from '../../utils/colors';
 import { pxToRem } from '../../utils/pxToRem';
 
 type IGoalCard = {
-  text: string;
+  imgSrc: string;
+  name: string;
+  body: string;
+  className?: string;
 };
-export const GoalCard: FC<IGoalCard> = ({ text }) => {
+export const GoalCard: FC<IGoalCard> = ({ imgSrc, name, body, className }) => {
   return (
-    <Card>
-      <Icon alt="" src={goal_icon} />
-      <Text>{text}</Text>
+    <Card className={className}>
+      <Avatar src={imgSrc} />
+      <TextContainer>
+        <Name>{name}</Name>
+        <SubTitle>{body}</SubTitle>
+      </TextContainer>
     </Card>
   );
 };
 
 const Card = styled.div`
-  background: ${colors.primary.primaryTint50};
-  flex-direction: column;
-  border: 0.5px solid #c4c4c4;
-  padding-bottom: 32px;
-  box-sizing: border-box;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 71.8491px 94.0881px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(9.4088px);
+  border-radius: 7.60308px;
   display: flex;
-  height: 172px;
-  padding: 12px;
-  box-shadow: 0px 2px 4px 4px rgba(129, 100, 203, 0.06);
-  :nth-child(2) {
-    margin: 0 40px;
-  }
-  width: calc(33.33% - 40px);
-  @media (max-width: 1000px) {
-    width: calc(45% - 16px);
-    margin: 0px 0px 40px;
-    :nth-child(2) {
-      margin: 0 0 0 40px;
-    }
-  }
-  @media (max-width: 730px) {
-    width: 100%;
-    margin: 0;
-    :nth-child(2) {
-      margin: 40px 0;
-    }
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 282px;
+  max-height: 264px;
+  padding: 40px 20px;
+  row-gap: 20px;
+  box-sizing: border-box;
+
+  @media (max-width: 712px) {
+    max-width: unset;
   }
 `;
-const Icon = styled.img`
-  height: 40px;
-  width: 40px;
-  margin-bottom: 40px;
+const Avatar = styled.img`
+  background: #c4c4c4;
+  width: 42.77px;
+  height: 42.77px;
+  object-fit: cover;
+  border-radius: 21.38px;
+  margin-right: 9.2px;
+  display: flex;
+  align-self: center;
 `;
-const Text = styled.p`
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+const Name = styled.p`
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: ${pxToRem(20)};
+  line-height: ${pxToRem(28)};
+  color: #000b33;
+`;
+const SubTitle = styled(Name)`
   font-weight: 400;
-  font-size: ${pxToRem(16)};
-  line-height: ${pxToRem(24)};
-  letter-spacing: ${pxToRem(0.15)};
-  color: ${colors.secondary.secondaryTint30};
-  height: 28px;
-  overflow-y: hidden;
+  font-size: ${pxToRem(14)};
+  line-height: ${pxToRem(21)};
+  margin-top: 3.67px;
 `;
