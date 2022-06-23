@@ -88,7 +88,6 @@ import twitter from '../../assets/twitter.svg';
 import linkedin from '../../assets/linkedin.svg';
 import email from '../../assets/email.svg';
 import call from '../../assets/call.svg';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 export const LandingPage = () => {
   const [active, setActive] = useState(2);
