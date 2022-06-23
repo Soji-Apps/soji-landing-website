@@ -131,14 +131,12 @@ export const LandingPage = () => {
           <HeaderContentContainer>
             <BackgroudCirlce />
             <HeaderTitle>
-              <Span>SOJI</Span> IS CONVINENET, EASY & SECURE
+              …The <Span>lifestyle</Span> you deserve, Let's champion your
+              comfort.
             </HeaderTitle>
             <HeaderSubTitle>
-              An enim nullam tempor sapien gravida donec enim ipsum porta justo
-              integer at integer congue magna at pretium purus pretium ligula
-              rutrum.An enim nullam tempor sapien gravida donec enim ipsum porta
-              justo integer at integer congue magna at pretium purus pretium
-              ligula rutrum.
+              Soji App gives you access to malls and shops in your region and
+              makes real estate very easy for you!
             </HeaderSubTitle>
             <HeaderButtonContainer>
               <StoreButton src={app_store} />
@@ -329,13 +327,8 @@ export const LandingPage = () => {
             <EmailSubscriptionInput placeholder="Enter your email address" />
             <EmailSubscriptionButton>Subscribe</EmailSubscriptionButton>
           </EmailSubscriptionContainer>
-          {/* <HeaderButtonContainer>
-          <StoreButton src={app_store} />
-          <StoreButton src={play_store} />
-        </HeaderButtonContainer> */}
         </Banner>
       </BannerContainer>
-      {/* <BottomContainer> */}
       <FooterContainer>
         <FooterFlex>
           <LogoWrap>

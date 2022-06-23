@@ -36,7 +36,7 @@ export const HeaderFlex = styled.div`
     fill: ${colors.primary.primaryTint50};
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: auto;
   }
@@ -55,7 +55,7 @@ export const Header = styled.header`
   justify-content: space-between;
   margin: 0px 8.3%;
   position: relative;
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: auto;
   }
@@ -81,6 +81,10 @@ export const BackgroudCirlce = styled.div`
   left: -8.3%;
   border-radius: 135px;
   filter: blur(100px);
+
+  @media (max-width: 375px) {
+    height: unset;
+  }
 `;
 export const BackgroudCirlce2 = styled(BackgroudCirlce)`
   background: #fda800;
@@ -100,8 +104,9 @@ export const BackgroudCirlce3 = styled(BackgroudCirlce)`
 export const HeaderTitle = styled.h1`
   font-weight: 700;
   margin-top: calc(200px - 24px);
-  font-size: ${pxToRem(60)};
+  font-size: 3rem;
   line-height: ${pxToRem(84)};
+  text-transform: capitalize;
   align-items: center;
   letter-spacing: ${pxToRem(-0.5)};
   color: ${colors.primary.primaryTint50};
@@ -142,7 +147,7 @@ export const HeaderImageContainer = styled.div`
   min-width: 441.36px;
   min-height: 400px;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     align-self: unset;
   }
   @media (max-width: 990px) {
@@ -250,7 +255,7 @@ export const AboutContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: auto;
   }
@@ -260,8 +265,10 @@ export const AboutContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    flex-direction: column;
     row-gap: 30px;
+  }
+  @media (max-width: 425px) {
+    margin: 55px 8.3% 160px 8.3%;
   }
 `;
 export const AboutTitle = styled.h2`
@@ -321,7 +328,7 @@ export const BenefitContainer = styled.div`
   margin: 0 8.3% 0 8.3%;
   text-align: center;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: 100px auto;
   }
@@ -339,6 +346,11 @@ export const StyledHeading = styled.h3`
   letter-spacing: -1.584px;
 
   color: #0d152e;
+
+  @media (max-width: 700px) {
+    font-size: ${pxToRem(25)};
+    line-height: ${pxToRem(25 * 1.5)};
+  }
 `;
 export const StyledDescription = styled.p`
   font-family: 'DM Sans';
@@ -453,9 +465,9 @@ export const SojiOnPhone = styled.img`
 `;
 
 export const GetStartedContainer = styled.div`
-  margin: 180px 8.3% 0 8.3%;
+  margin: 180px 0 0 0;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: 100px auto;
   }
@@ -479,8 +491,10 @@ export const CarouselItem = styled.div`
   width: 100%;
   overflow-x: scroll;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
-  column-gap: 10px;
+  column-gap: 3.9%;
 `;
 
 export const CarouselImage = styled.img<{ active: boolean }>`
@@ -595,7 +609,7 @@ export const FeaturesContainer = styled.div`
   min-height: 684.32px;
   margin: 160px 0px 119.68px 0px;
   padding: 0px 8.3%;
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: 100px auto;
   }
@@ -608,27 +622,21 @@ export const FeatureImageContainer = styled.div`
   position: relative;
   margin-top: 50px;
   align-self: flex-end;
-  /* min-width: 441.36px;
-  min-height: 400px; */
   @media (max-width: 990px) {
     align-self: center;
-    /* margin-top: 40px; */
     min-width: unset;
   }
 `;
 export const FeatureImage = styled.img`
   object-fit: contain;
-  /* max-height: 684.32px;
-  max-width: 681.65x;
-  @media (max-width: 990px) {
-    max-height: 500px;
-  }
-  @media (max-width: 768px) {
-    margin-top: 40px;
-    max-height: unset;
-  } */
+  width: 100%;
 `;
-export const FeatureTitle = styled(AboutTitle)``;
+export const FeatureTitle = styled(AboutTitle)`
+  @media (max-width: 600px) {
+    font-size: ${pxToRem(25)};
+    line-height: ${pxToRem(25 * 1.5)};
+  }
+`;
 export const FeatureContent = styled(AboutContent)`
   max-width: 638px;
   text-align: left;
@@ -654,9 +662,12 @@ export const Banner = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: auto;
+  }
+  @media (max-width: 600px) {
+    align-items: unset;
   }
 `;
 
@@ -667,9 +678,16 @@ export const BannerTitle = styled(HeaderTitle)`
   line-height: ${pxToRem(57)};
   color: ${colors.primary.primaryTint50};
   text-align: center;
-  @media (max-width: 500px) {
-    font-size: ${pxToRem(30)};
-    line-height: ${pxToRem(30 * 1.5)};
+  @media (max-width: 700px) {
+    font-size: ${pxToRem(25)};
+    line-height: ${pxToRem(25 * 1.5)};
+    width: 80%;
+  }
+  @media (max-width: 600px) {
+    align-self: center;
+  }
+  @media (max-width: 600px) {
+    width: 98%;
   }
 `;
 export const BannerSubTitle = styled(HeaderSubTitle)`
@@ -689,6 +707,12 @@ export const EmailSubscriptionContainer = styled.div`
   border-radius: 4px;
   padding: 8px;
   margin-top: 48px;
+  @media (max-width: 600px) {
+    margin: 30px 60px 0;
+  }
+  @media (max-width: 425px) {
+    margin: 30px 20px 0;
+  }
 `;
 export const EmailSubscriptionInput = styled.input`
   border: none;
@@ -704,6 +728,11 @@ export const EmailSubscriptionInput = styled.input`
     line-height: 140%;
     /* or 22px */
     color: #a1a1a1;
+  }
+
+  @media (max-width: 600px) {
+    width: unset;
+    flex: 1;
   }
 `;
 export const EmailSubscriptionButton = styled.button`
@@ -760,7 +789,7 @@ export const FooterFlex = styled.div`
     padding: 0px 0px 0px 25px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1551px) {
     max-width: 1440px;
     margin: auto;
   }
