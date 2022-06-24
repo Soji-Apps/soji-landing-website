@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, FC } from 'react';
 import styled from 'styled-components';
+import loader from '../../assets/infinity_loader.svg';
 
 export const BaseButton = styled.button`
   background: transparent;
@@ -26,3 +27,26 @@ export const StoreButton: FC<IStoreButton> = ({ src, alt = '', ...rest }) => {
 };
 
 const ButtonImage = styled.img``;
+
+interface ILoadButton extends ComponentPropsWithoutRef<'button'> {
+  btnTxt: string;
+  isLoading: boolean;
+}
+
+const ButtonImg = styled.img`
+  width: 35px;
+  height: 12px;
+  object-fit: cover;
+`;
+
+export const PrimaryButton: FC<ILoadButton> = ({
+  btnTxt,
+  isLoading,
+  ...rest
+}) => {
+  return (
+    <button {...rest}>
+      {isLoading ? <ButtonImg src={loader} alt={''} /> : btnTxt}
+    </button>
+  );
+};

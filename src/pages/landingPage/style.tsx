@@ -5,6 +5,7 @@ import { colors } from '../../utils/colors';
 import { pxToRem } from '../../utils/pxToRem';
 import banner from '../../assets/banner.svg';
 import bgImage from '../../assets/bg_img.svg';
+import { PrimaryButton } from '../../components';
 
 export const Container = styled.div`
   display: flex;
@@ -735,7 +736,7 @@ export const EmailSubscriptionInput = styled.input`
     flex: 1;
   }
 `;
-export const EmailSubscriptionButton = styled.button`
+export const EmailSubscriptionButton = styled(PrimaryButton)`
   background-color: #fda800;
   border-radius: 8px;
   padding: 12px 25px;

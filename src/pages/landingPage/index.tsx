@@ -86,12 +86,16 @@ import carouselImage4 from '../../assets/carouselImage3.svg';
 import carouselImage5 from '../../assets/carouselImage4.svg';
 import twitter from '../../assets/twitter.svg';
 import linkedin from '../../assets/linkedin.svg';
-import email from '../../assets/email.svg';
 import call from '../../assets/call.svg';
+import { showErrorToast, showSuccessToast } from '../../utils/toast';
+import { BASE_URL } from '../../api';
 
 export const LandingPage = () => {
   const [active, setActive] = useState(2);
   const documentRef = useRef<HTMLDivElement>(null);
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
   const onScroll = () => {
     let revealPoint = 100;
     var reveals = documentRef.current?.querySelectorAll('.reveal');
@@ -107,9 +111,34 @@ export const LandingPage = () => {
       }
     }
   };
+  const handleSubscribe = () => {
+    const regex = new RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/);
+    if (!regex.test(email)) {
+      showErrorToast('invalid email address');
+      return;
+    }
+    setIsLoading(true);
+    fetch(`${BASE_URL}/user/subscribe`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email })
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        showSuccessToast(response.message);
+      })
+      .catch((error) => {
+        showErrorToast(`An error occured : ${error.message}`);
+      })
+      .finally(() => {
+        setEmail('');
+        setIsLoading(false);
+      });
+  };
   useLayoutEffect(() => {
     window.addEventListener('scroll', onScroll);
-
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   const items = [
@@ -324,8 +353,16 @@ export const LandingPage = () => {
             Want us to email you about special offers & updates?
           </BannerTitle>
           <EmailSubscriptionContainer>
-            <EmailSubscriptionInput placeholder="Enter your email address" />
-            <EmailSubscriptionButton>Subscribe</EmailSubscriptionButton>
+            <EmailSubscriptionInput
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
+            />
+            <EmailSubscriptionButton
+              isLoading={isLoading}
+              btnTxt={'Subscribe'}
+              onClick={handleSubscribe}
+            />
           </EmailSubscriptionContainer>
         </Banner>
       </BannerContainer>
