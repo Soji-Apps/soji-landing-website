@@ -62,7 +62,8 @@ import {
   StyledHeader,
   CarouselItem,
   StyledHeading,
-  Wrap
+  Wrap,
+  SocialIconLink
 } from './style';
 import { ReactComponent as Logo } from '../../assets/soji_logo.svg';
 import headerImage from '../../assets/header_img.svg';
@@ -76,7 +77,7 @@ import featureImg from '../../assets/feature_image.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef, useState } from 'react';
-import facebook from '../../assets/facebook.svg';
+// import facebook from '../../assets/facebook.svg';
 import instagram from '../../assets/instagram.svg';
 import usecaseImage from '../../assets/Device - iPhone X.svg';
 import carouselImage3 from '../../assets/carouselImage.svg';
@@ -84,9 +85,11 @@ import carouselImage1 from '../../assets/carouselImage1.svg';
 import carouselImage2 from '../../assets/carouselImage2.svg';
 import carouselImage4 from '../../assets/carouselImage3.svg';
 import carouselImage5 from '../../assets/carouselImage4.svg';
-import twitter from '../../assets/twitter.svg';
+// import twitter from '../../assets/twitter.svg';
 import linkedin from '../../assets/linkedin.svg';
-import call from '../../assets/call.svg';
+import call from '../../assets/phone.svg';
+import message from '../../assets/Message.svg';
+import location from '../../assets/location.svg';
 import { showErrorToast, showSuccessToast } from '../../utils/toast';
 import { BASE_URL } from '../../api';
 
@@ -154,7 +157,7 @@ export const LandingPage = () => {
       <HeaderContent>
         <HeaderFlex>
           <Logo />
-          <ContactUs>Contact us</ContactUs>
+          <ContactUs href="#footer">Contact us</ContactUs>
         </HeaderFlex>
         <Header>
           <HeaderContentContainer>
@@ -164,8 +167,8 @@ export const LandingPage = () => {
               comfort.
             </HeaderTitle>
             <HeaderSubTitle>
-              Soji App gives you access to malls and shops in your region and
-              makes real estate very easy for you!
+              SOJI gives you access to malls and shopping store in your region
+              and makes your real estate experience very easy and trust
             </HeaderSubTitle>
             <HeaderButtonContainer>
               <StoreButton src={app_store} />
@@ -184,32 +187,30 @@ export const LandingPage = () => {
           <CardContainer>
             <GoalCard
               imgSrc={icon1}
-              name="Increased revenue"
-              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+              name="Convenient"
+              body="SOJI is the best option for a busy person to smoothen his day and stay successful"
             />
             <GoalCard
               imgSrc={icon2}
               name="Innovative solution"
-              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+              body="We saw a need in the community and we are trying to provide a solution that works"
             />
             <GoalCard
               imgSrc={icon3}
               name="Vast Clientele"
-              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+              body="Stores, products and services are provided easily since they are regional"
             />
             <GoalCard
               imgSrc={icon4}
               name="Secure transactions"
-              body="With lots of unique blocks you can easily create a page without coding with Appmax"
+              body="All operations on the app are encrypted and void of compromise"
             />
           </CardContainer>
           <Column>
-            <AboutTitle>Unique selling Proposition (USP)</AboutTitle>
+            <AboutTitle>Safe delivery of products and services</AboutTitle>
             <AboutContent>
-              An enim nullam tempor sapien gravida donec enim ipsum porta justo
-              integer at odio velna vitae auctor integer An enim nullam tempor
-              sapien gravida donec enim ipsum porta justo integer at odio velna
-              vitae auctor integer
+              We connect users to services and produts locally and efficently
+              cutting stress and delay.
             </AboutContent>
           </Column>
         </AboutContainer>
@@ -219,8 +220,8 @@ export const LandingPage = () => {
           <StyledHeader>
             <StyledHeading>Benefits of SOJI</StyledHeading>
             <StyledDescription>
-              This section talks about the key benefits of SOJI to the user, who
-              include the Agent and the Client
+              Set up and account and proceed to an awesome experience online and
+              offline!
             </StyledDescription>
           </StyledHeader>
           <BenefitWraper>
@@ -230,20 +231,20 @@ export const LandingPage = () => {
                   <BenefitNumberWrapper>
                     <BenefitNumber>1</BenefitNumber>
                   </BenefitNumberWrapper>
-                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitTitle>Fast delivery</BenefitTitle>
                   <BenefitPhrase>
-                    A wonderful serenity has taken possession of my entire soul,
-                    like these sweet mornings of spring which{' '}
+                    Our team and logistics system is built to work with perfect
+                    timing making delivery fast
                   </BenefitPhrase>
                 </LeftBenefitList>
                 <LeftBenefitList>
                   <BenefitNumberWrapper>
                     <BenefitNumber>2</BenefitNumber>
                   </BenefitNumberWrapper>
-                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitTitle>Property inspection</BenefitTitle>
                   <BenefitPhrase>
-                    A wonderful serenity has taken possession of my entire soul,
-                    like these sweet mornings of spring which{' '}
+                    You choose the property of your chioce and a thorough
+                    inspection is guaranteed
                   </BenefitPhrase>
                 </LeftBenefitList>
               </BenefitItem>
@@ -253,18 +254,18 @@ export const LandingPage = () => {
               <BenefitItem>
                 <RightBenefitList>
                   <BenefitNumber>3</BenefitNumber>
-                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitTitle>Quality assurance</BenefitTitle>
                   <BenefitPhrase>
-                    A wonderful serenity has taken possession of my entire soul,
-                    like these sweet mornings of spring which{' '}
+                    We deliver exactly what we offer you, top-tier professional
+                    product and service.
                   </BenefitPhrase>
                 </RightBenefitList>
                 <RightBenefitList>
                   <BenefitNumber>4</BenefitNumber>
-                  <BenefitTitle>Variety of services</BenefitTitle>
+                  <BenefitTitle>End-End encryption</BenefitTitle>
                   <BenefitPhrase>
-                    A wonderful serenity has taken possession of my entire soul,
-                    like these sweet mornings of spring which{' '}
+                    Your transactions are protected and secured by top notch
+                    engineering and technology
                   </BenefitPhrase>
                 </RightBenefitList>
               </BenefitItem>
@@ -277,8 +278,8 @@ export const LandingPage = () => {
           <StyledHeader>
             <StyledHeading>Start your journey with SOJI!</StyledHeading>
             <StyledDescription>
-              This section shows different screens shots from SOJI as an example
-              of “context of use”
+              After singing up and setting up your profile, then all that is
+              left is an awesome SOJI experience.
             </StyledDescription>
           </StyledHeader>
           <CarouselContainer>
@@ -317,11 +318,12 @@ export const LandingPage = () => {
         <FeaturesWrapper>
           <FeaturesContainer className="reveal">
             <Column>
-              <FeatureTitle>Reinforcement statement</FeatureTitle>
+              <FeatureTitle>
+                Enjoy the SOJI lifestyle Easy, safe & seamless
+              </FeatureTitle>
               <FeatureContent>
-                This section supports the hero section by reinforcing the
-                headline and assuring the visitor of top tier experience and
-                service.
+                Browse the list of products and services, make an order and
+                enjoy the SOJI experience to the fullest!
               </FeatureContent>
             </Column>
             <FeatureImageContainer>
@@ -331,16 +333,16 @@ export const LandingPage = () => {
                 imgSrc={
                   'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
                 }
-                name={'Ronald Richards'}
-                body={'One of the best SOJI I have ever used'}
+                name={'Ben Okeke'}
+                body={'My orders always come in so fast with SOJI'}
               />
               <CustomReviewCard
                 imgSrc={
                   'https://img.freepik.com/free-photo/attractive-female-student-with-curly-hair-wears-transparent-glasses-white-t-shirt-stands-against-blue-background-has-calm-face-expression-tender-smile_273609-32793.jpg?w=1380&t=st=1649435206~exp=1649435806~hmac=9ca2ff3e0737a7b5329cb3beeb1dc65cdd147e7e2a329cad325a421f0cba564d'
                 }
-                name={'Jenny Wilson'}
+                name={'Princess Agu'}
                 body={
-                  'I commented on SOJI,I commented on SOJI, I commented on SOJI, '
+                  'SOJI helped me secure an apartment of my chioce at an affordable price'
                 }
               />
             </FeatureImageContainer>
@@ -366,29 +368,47 @@ export const LandingPage = () => {
           </EmailSubscriptionContainer>
         </Banner>
       </BannerContainer>
-      <FooterContainer>
+      <FooterContainer id="footer">
         <FooterFlex>
           <LogoWrap>
             <Logo />
             <Wrap>
               <FooterText>Convenient and Professional service</FooterText>
               <SocialIconWrap>
-                <SocialIcon src={instagram} />
-                <SocialIcon src={linkedin} />
-                <SocialIcon src={facebook} />
-                <SocialIcon src={twitter} />
+                <SocialIconLink
+                  href="https://instagram.com/soji_app?igshid=YmMyMTA2M2Y="
+                  target="_blank"
+                >
+                  <SocialIcon src={instagram} />
+                </SocialIconLink>
+                <SocialIconLink
+                  href="https://www.linkedin.com/company/sojiapp/"
+                  target={'_blank'}
+                >
+                  <SocialIcon src={linkedin} />
+                </SocialIconLink>
+                {/* <SocialIconLink>
+                  <SocialIcon src={facebook} />
+                </SocialIconLink>
+                <SocialIconLink>
+                  <SocialIcon src={twitter} />
+                </SocialIconLink> */}
               </SocialIconWrap>
             </Wrap>
           </LogoWrap>
           <ContactWrap>
             <Contact>Contact info</Contact>
-            <FooterText>455 West Orchard Street</FooterText>
-            <FooterText>Kings Mountains NC 280867</FooterText>
             <FooterText>
-              <SocialIcon src={call} /> +088 (246) 642-27-10
+              <SocialIcon src={location} />
+              Enugu, Nigeria
+            </FooterText>
+            {/* <FooterText>Kings Mountains NC 280867</FooterText> */}
+            <FooterText>
+              <SocialIcon src={call} /> +234 703-302-5748
             </FooterText>
             <FooterText>
-              <SocialIcon src={email} /> example@gmail.com
+              <SocialIcon src={message} />
+              admin@sojiapps.com
             </FooterText>
             <HeaderButtonContainer>
               <StoreButton src={app_store} />
@@ -397,7 +417,7 @@ export const LandingPage = () => {
           </ContactWrap>
         </FooterFlex>
       </FooterContainer>
-      <CopyWriteText>© 2021 4thenergy All Rights Reserved.</CopyWriteText>
+      <CopyWriteText>© 2021 SOJI All Rights Reserved.</CopyWriteText>
       {/* </BottomContainer> */}
     </Container>
   );
