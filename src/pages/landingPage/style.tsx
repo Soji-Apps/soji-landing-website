@@ -42,12 +42,13 @@ export const HeaderFlex = styled.div`
     margin: auto;
   }
 `;
-export const ContactUs = styled.p`
+export const ContactUs = styled.a`
   font-weight: 500;
   font-size: ${pxToRem(21)};
   line-height: ${pxToRem(29)};
   letter-spacing: ${pxToRem(0.15)};
   color: ${colors.primary.main};
+  text-decoration: none;
 `;
 export const Header = styled.header`
   /* padding: 0px 8.3%; */
@@ -833,6 +834,10 @@ export const SocialIconWrap = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 24px 8.3% 24px 0%;
+`;
+
+export const SocialIconLink = styled.a`
+  text-decoration: none;
 `;
 export const SocialIcon = styled.img`
   padding-right: 4.8px;
