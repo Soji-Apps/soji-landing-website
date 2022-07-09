@@ -77,7 +77,7 @@ import featureImg from '../../assets/feature_image.svg';
 import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef, useState } from 'react';
-// import facebook from '../../assets/facebook.svg';
+import facebook from '../../assets/facebook.svg';
 import instagram from '../../assets/instagram.svg';
 import usecaseImage from '../../assets/Device - iPhone X.svg';
 import carouselImage3 from '../../assets/carouselImage.svg';
@@ -85,11 +85,13 @@ import carouselImage1 from '../../assets/carouselImage1.svg';
 import carouselImage2 from '../../assets/carouselImage2.svg';
 import carouselImage4 from '../../assets/carouselImage3.svg';
 import carouselImage5 from '../../assets/carouselImage4.svg';
-// import twitter from '../../assets/twitter.svg';
+import twitter from '../../assets/twitter.svg';
 import linkedin from '../../assets/linkedin.svg';
 import call from '../../assets/phone.svg';
 import message from '../../assets/Message.svg';
 import location from '../../assets/location.svg';
+import pdf from '../../assets/Jeffdona_Global_Resources_Ltd_Privacy_Policy Document.pdf';
+
 import { showErrorToast, showSuccessToast } from '../../utils/toast';
 import { BASE_URL } from '../../api';
 
@@ -374,6 +376,7 @@ export const LandingPage = () => {
             <Logo />
             <Wrap>
               <FooterText>Convenient and Professional service</FooterText>
+
               <SocialIconWrap>
                 <SocialIconLink
                   href="https://instagram.com/soji_app?igshid=YmMyMTA2M2Y="
@@ -387,13 +390,16 @@ export const LandingPage = () => {
                 >
                   <SocialIcon src={linkedin} />
                 </SocialIconLink>
-                {/* <SocialIconLink>
+                <SocialIconLink>
                   <SocialIcon src={facebook} />
                 </SocialIconLink>
                 <SocialIconLink>
                   <SocialIcon src={twitter} />
-                </SocialIconLink> */}
+                </SocialIconLink>
               </SocialIconWrap>
+              <FooterText href={pdf} target={'_blank'} as={'a'}>
+                Privacy Policy
+              </FooterText>
             </Wrap>
           </LogoWrap>
           <ContactWrap>
@@ -402,7 +408,6 @@ export const LandingPage = () => {
               <SocialIcon src={location} />
               Enugu, Nigeria
             </FooterText>
-            {/* <FooterText>Kings Mountains NC 280867</FooterText> */}
             <FooterText>
               <SocialIcon src={call} /> +234 703-302-5748
             </FooterText>
