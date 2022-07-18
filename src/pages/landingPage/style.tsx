@@ -858,3 +858,17 @@ export const CopyWriteText = styled(FooterText)`
   padding: 64px 0px 32px 0px;
   background-color: ${colors.primary.primaryTint50};
 `;
+export const PlaystoreButton = styled.a`
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin-right: 24px;
+  :nth-child(2) {
+    padding-right: 0;
+  }
+`;
+export const ButtonImg = styled.img`
+  object-fit: cover;
+`;
