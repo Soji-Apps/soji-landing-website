@@ -175,8 +175,15 @@ export const LandingPage = () => {
               and makes your real estate experience very easy and trust
             </HeaderSubTitle>
             <HeaderButtonContainer>
-              <StoreButton src={app_store} />
-              <StoreButton src={play_store} />
+              <PlaystoreButton>
+                <ButtonImg src={app_store} />
+              </PlaystoreButton>
+              <PlaystoreButton
+                target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.sojiapps"
+              >
+                <ButtonImg src={play_store} />
+              </PlaystoreButton>
             </HeaderButtonContainer>
           </HeaderContentContainer>
           <HeaderImageContainer>
@@ -421,7 +428,10 @@ export const LandingPage = () => {
               <PlaystoreButton>
                 <ButtonImg src={app_store} />
               </PlaystoreButton>
-              <PlaystoreButton href="https://play.google.com/store/apps/details?id=com.sojiapps">
+              <PlaystoreButton
+                target="_blank"
+                href="https://play.google.com/store/apps/details?id=com.sojiapps"
+              >
                 <ButtonImg src={play_store} />
               </PlaystoreButton>
             </HeaderButtonContainer>
