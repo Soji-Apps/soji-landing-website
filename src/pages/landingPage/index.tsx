@@ -63,7 +63,9 @@ import {
   CarouselItem,
   StyledHeading,
   Wrap,
-  SocialIconLink
+  SocialIconLink,
+  PlaystoreButton,
+  ButtonImg
 } from './style';
 import { ReactComponent as Logo } from '../../assets/soji_logo.svg';
 import headerImage from '../../assets/header_img.svg';
@@ -416,14 +418,17 @@ export const LandingPage = () => {
               admin@sojiapps.com
             </FooterText>
             <HeaderButtonContainer>
-              <StoreButton src={app_store} />
-              <StoreButton src={play_store} />
+              <PlaystoreButton>
+                <ButtonImg src={app_store} />
+              </PlaystoreButton>
+              <PlaystoreButton href="https://play.google.com/store/apps/details?id=com.sojiapps">
+                <ButtonImg src={play_store} />
+              </PlaystoreButton>
             </HeaderButtonContainer>
           </ContactWrap>
         </FooterFlex>
       </FooterContainer>
       <CopyWriteText>© 2021 SOJI All Rights Reserved.</CopyWriteText>
-      {/* </BottomContainer> */}
     </Container>
   );
 };
