@@ -76,7 +76,6 @@ import icon2 from '../../assets/card_icon2.svg';
 import icon3 from '../../assets/card_icon3.svg';
 import icon4 from '../../assets/card_icon4.svg';
 import featureImg from '../../assets/feature_image.svg';
-import { StoreButton } from '../../components/button';
 import { GoalCard } from '../../components/card';
 import { useLayoutEffect, useRef, useState } from 'react';
 import facebook from '../../assets/facebook.svg';
@@ -175,7 +174,10 @@ export const LandingPage = () => {
               and makes your real estate experience very easy and trust
             </HeaderSubTitle>
             <HeaderButtonContainer>
-              <PlaystoreButton>
+              <PlaystoreButton
+                target="_blank"
+                href="https://apps.apple.com/ng/app/soji-app/id1636285403"
+              >
                 <ButtonImg src={app_store} />
               </PlaystoreButton>
               <PlaystoreButton
@@ -425,7 +427,10 @@ export const LandingPage = () => {
               admin@sojiapps.com
             </FooterText>
             <HeaderButtonContainer>
-              <PlaystoreButton>
+              <PlaystoreButton
+                href="https://apps.apple.com/ng/app/soji-app/id1636285403"
+                target={'_blank'}
+              >
                 <ButtonImg src={app_store} />
               </PlaystoreButton>
               <PlaystoreButton
