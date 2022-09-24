@@ -30,7 +30,7 @@ const ButtonImage = styled.img``;
 
 interface ILoadButton extends ComponentPropsWithoutRef<'button'> {
   btnTxt: string;
-  isLoading: boolean;
+  isLoading?: boolean;
 }
 
 const ButtonImg = styled.img`
